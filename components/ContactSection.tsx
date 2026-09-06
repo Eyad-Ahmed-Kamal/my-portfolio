@@ -111,7 +111,9 @@ export default function ContactSection() {
 
               <a
                 href="/cv.pdf"
-                download="Eyad_Ahmed_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Eyad_Ahmed_Kamal_Resume.pdf"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-cyan-400/30 bg-cyan-400/10 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all text-center"
               >
                 <Download className="w-4 h-4" />

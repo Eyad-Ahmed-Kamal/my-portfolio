@@ -41,7 +41,9 @@ export default function Hero() {
 
             <a
               href="/cv.pdf"
-              download="Eyad_Ahmed_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Eyad_Ahmed_Kamal_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/10 bg-white/[0.03] text-[#E8EDF5] text-sm font-semibold hover:bg-white/[0.08] hover:border-white/20 transition-all"
             >
               <Download className="w-4 h-4 text-[#8E9AAE]" />

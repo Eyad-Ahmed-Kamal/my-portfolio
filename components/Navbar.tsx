@@ -47,7 +47,9 @@ export default function Navbar() {
           ))}
           <a
             href="/cv.pdf"
-            download="Eyad_Ahmed_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Eyad_Ahmed_Kamal_Resume.pdf"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-xs font-medium hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all"
           >
             <Download className="w-3.5 h-3.5" />
@@ -59,7 +61,9 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-3">
           <a
             href="/cv.pdf"
-            download="Eyad_Ahmed_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Eyad_Ahmed_Kamal_Resume.pdf"
             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-xs font-medium"
           >
             <Download className="w-3 h-3" />
