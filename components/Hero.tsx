@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
@@ -12,7 +10,7 @@ export default function Hero() {
           {/* Availability Badge */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-medium mb-7">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-            <span>Available for Summer 2026 Internships</span>
+            <span>Open to Internship Opportunities</span>
           </div>
 
           {/* Main Headline */}
@@ -26,7 +24,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg leading-relaxed text-[#8E9AAE] max-w-[620px] mb-8">
-            Second-year student focused on Power BI, Star Schema modeling, DAX, and algorithmic problem solving in C++. Seeking a Summer 2026 internship to learn, contribute, and build data systems at scale.
+            Second-year student focused on Power BI, Star Schema modeling, DAX, and algorithmic problem solving in C++. Looking for an internship where I can learn, contribute, and build reliable data models.
           </p>
 
           {/* Action CTAs */}

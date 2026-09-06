@@ -12,12 +12,12 @@ export default function CaseStudies() {
       {/* Section Header */}
       <div className="flex items-baseline gap-4 mb-4">
         <span className="font-mono text-xs text-cyan-400 font-semibold tracking-wider uppercase">
-          01 / Case Studies
+          01 / Projects
         </span>
         <div className="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent" />
       </div>
       <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-[-0.03em] text-[#E8EDF5] mb-3">
-        Featured BI Case Studies
+        Projects
       </h2>
       <p className="text-base text-[#8E9AAE] max-w-2xl mb-10 leading-relaxed">
         End-to-end business intelligence projects emphasizing dimensional data modeling, centralized DAX calculations, and clean analytical delivery.

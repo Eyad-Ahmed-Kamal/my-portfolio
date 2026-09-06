@@ -1,6 +1,4 @@
-"use client";
-
-import { BarChart3, Code2, GraduationCap } from "lucide-react";
+import { BarChart3, Code2 } from "lucide-react";
 
 export default function SkillsSection() {
   const skillCategories = [
@@ -14,6 +12,7 @@ export default function SkillsSection() {
         { name: "DAX", detail: "Time intelligence, CALCULATE, iterator functions (SUMX, AVERAGEX)" },
         { name: "Star Schema Modeling", detail: "Fact/dimension separation, surrogate keys, 1:* relationships" },
         { name: "Advanced Excel", detail: "Power Query ETL, automated data cleanup & pivot models" },
+        { name: "Statistics & Probability", detail: "Descriptive & inferential statistics, probability distributions" },
       ],
     },
     {
@@ -25,17 +24,6 @@ export default function SkillsSection() {
         { name: "C++", detail: "Modern C++, STL, algorithms & competitive problem solving" },
         { name: "Python", detail: "Pandas, NumPy, data analysis workflows & automation scripts" },
         { name: "SQL", detail: "Multi-table joins, aggregations, window functions & relational modeling" },
-      ],
-    },
-    {
-      title: "Core Foundations",
-      icon: GraduationCap,
-      badge: "Academic & Rigor",
-      colorClass: "text-[#8E9AAE] border-white/10 bg-white/[0.04]",
-      skills: [
-        { name: "Data Structures & Algorithms", detail: "Complexity analysis (Big-O), search, sorting & graph algorithms" },
-        { name: "Statistics & Probability", detail: "Descriptive & inferential statistics, probability distributions" },
-        { name: "Linear Algebra", detail: "Vector spaces, matrix operations & transformations" },
       ],
     },
   ];
@@ -66,13 +54,13 @@ export default function SkillsSection() {
               </div>
               <div className="pb-4">
                 <span className="font-mono text-[11px] text-cyan-400 uppercase tracking-wider font-semibold">
-                  Mar 2025 – Present · Contract
+                  Mar 2025 – 2026 · Contract
                 </span>
                 <h4 className="text-base sm:text-lg font-semibold text-[#E8EDF5] mt-1">
                   AI Data Annotator — Outlier.ai
                 </h4>
                 <p className="text-sm text-[#8E9AAE] mt-1.5 leading-relaxed">
-                  Evaluating and quality-checking training data for Large Language Models. Ranking model responses and analyzing ambiguous edge cases against strict evaluation rubrics under continuous external review.
+                  Evaluated and quality-checked training data for Large Language Models. Ranked model responses and analyzed ambiguous edge cases against strict evaluation rubrics under continuous external review.
                 </p>
               </div>
             </div>
@@ -109,7 +97,7 @@ export default function SkillsSection() {
                   B.Sc. AI &amp; Data Science — Zagazig University
                 </h4>
                 <p className="text-sm text-[#8E9AAE] mt-1.5 leading-relaxed">
-                  Faculty of Computers and Information (Credit-Hours Program). Completed Level 1 (34 credit hours, 3.22 GPA). Rigorous academic coursework in C++ programming, Data Structures &amp; Algorithms, Statistics &amp; Probability, and Linear Algebra.
+                  Faculty of Computers and Information (Credit-Hours Program). Completed Level 1 — 34 credit hours, 3.22 GPA.
                 </p>
               </div>
             </div>

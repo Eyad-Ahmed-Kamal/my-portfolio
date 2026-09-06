@@ -61,7 +61,7 @@ export default function KpiRibbon() {
             ECPC <span className="text-emerald-400 font-normal">2026</span>
           </div>
           <p className="text-xs sm:text-sm text-[#8E9AAE] leading-snug">
-            Contestant (ICPC Qualifications · Honorable Mention)
+            Contestant (ECPC Qualifications · Honorable Mention)
           </p>
         </div>
 

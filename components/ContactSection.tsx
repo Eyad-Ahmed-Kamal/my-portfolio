@@ -43,7 +43,7 @@ export default function ContactSection() {
           <div>
             <div className="inline-flex items-center gap-2 font-mono text-xs text-emerald-400 font-semibold mb-4">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-              <span>Seeking Summer 2026 Internships</span>
+              <span>Open to Internship Opportunities</span>
             </div>
 
             <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-[#E8EDF5] leading-tight mb-4">
@@ -91,6 +91,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-3 gap-3">
               <a
                 href="https://github.com/Eyad-Ahmed-Kamal"
+                aria-label="GitHub profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-white/10 bg-white/[0.03] text-sm font-semibold text-[#E8EDF5] hover:bg-white/[0.08] hover:border-white/20 transition-all text-center"
@@ -101,6 +102,7 @@ export default function ContactSection() {
 
               <a
                 href="https://linkedin.com/in/eyad-ahmed-76ai"
+                aria-label="LinkedIn profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-white/10 bg-white/[0.03] text-sm font-semibold text-[#E8EDF5] hover:bg-white/[0.08] hover:border-white/20 transition-all text-center"
@@ -111,6 +113,7 @@ export default function ContactSection() {
 
               <a
                 href="/cv.pdf"
+                aria-label="Download CV (PDF)"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-cyan-400/30 bg-cyan-400/10 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all text-center"

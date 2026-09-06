@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { Award, Terminal, Binary, Cpu } from "lucide-react";
+import { Award, Terminal, Binary } from "lucide-react";
 
 export default function CompetitiveSection() {
   return (
@@ -57,7 +55,7 @@ export default function CompetitiveSection() {
           <div className="p-6 sm:p-7 rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent relative overflow-hidden">
             <div className="flex items-center gap-2 font-mono text-xs text-emerald-300 mb-3">
               <Award className="w-4 h-4 text-emerald-400" />
-              <span className="uppercase tracking-wider">ICPC Foundation Recognition</span>
+              <span className="uppercase tracking-wider">ECPC 2026 · Qualifications</span>
             </div>
             <h4 className="text-xl font-semibold text-[#E8EDF5] mb-3">
               Honorable Mention Awardee
@@ -75,23 +73,6 @@ export default function CompetitiveSection() {
             </div>
 
             <div className="flex flex-wrap gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/[0.03] text-xs text-[#E8EDF5] font-medium">
-                <Binary className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Algorithms (C++)</span>
-              </span>
-
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/[0.03] text-xs text-[#E8EDF5] font-medium">
-                <Cpu className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Data Structures (DSA)</span>
-              </span>
-
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/[0.03] text-xs text-[#E8EDF5] font-medium">
-                <span>Statistics &amp; Probability</span>
-              </span>
-
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/[0.03] text-xs text-[#E8EDF5] font-medium">
-                <span>Linear Algebra</span>
-              </span>
             </div>
           </div>
         </div>
