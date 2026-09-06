@@ -54,7 +54,7 @@ export default function SkillsSection() {
               </div>
               <div className="pb-4">
                 <span className="font-mono text-[11px] text-cyan-400 uppercase tracking-wider font-semibold">
-                  Mar 2025 – 2026 · Contract
+                  Mar 2025 · Contract
                 </span>
                 <h4 className="text-base sm:text-lg font-semibold text-[#E8EDF5] mt-1">
                   AI Data Annotator — Outlier.ai
