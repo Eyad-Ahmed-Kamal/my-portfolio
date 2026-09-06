@@ -16,17 +16,17 @@ export default function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[60px] font-semibold tracking-[-0.035em] leading-[1.05] text-[#E8EDF5] mb-6">
-            I turn raw transactional data into{" "}
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-semibold tracking-[-0.035em] leading-[1.1] text-[#E8EDF5] mb-6">
+            AI &amp; Data Science undergraduate at Zagazig University building{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
-              governed models
+              business intelligence solutions
             </span>{" "}
-            executives actually trust.
+            from the data model up.
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg leading-relaxed text-[#8E9AAE] max-w-[620px] mb-8">
-            Undergraduate in AI &amp; Data Science at Zagazig University. I design star-schema warehouses, author time-intelligence DAX, and lead analytics deliveries — backed by the algorithmic rigor of an ICPC-qualified competitive programmer.
+            Second-year student focused on Power BI, Star Schema modeling, DAX, and algorithmic problem solving in C++. Seeking a Summer 2026 internship to learn, contribute, and build data systems at scale.
           </p>
 
           {/* Action CTAs */}
@@ -43,11 +43,10 @@ export default function Hero() {
               href="/cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="Eyad_Ahmed_Kamal_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/10 bg-white/[0.03] text-[#E8EDF5] text-sm font-semibold hover:bg-white/[0.08] hover:border-white/20 transition-all"
             >
               <Download className="w-4 h-4 text-[#8E9AAE]" />
-              <span>Download CV</span>
+              <span>View &amp; Download CV</span>
             </a>
           </div>
 
@@ -92,7 +91,7 @@ export default function Hero() {
           <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-[#0F141F] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.85)]">
             <div className="relative aspect-[4/5] w-full">
               <Image
-                src="/uploads/Enhance_image_quality_to_professional_202605301343.jpeg"
+                src="/uploads/eyad_portrait.jpeg"
                 alt="Eyad Ahmed Kamal Mostafa"
                 fill
                 priority
@@ -109,7 +108,7 @@ export default function Hero() {
                 Eyad Ahmed Kamal Mostafa
               </div>
               <div className="font-mono text-xs text-cyan-400 mt-1 flex items-center gap-2">
-                <span>BI &amp; Star Schema Architect</span>
+                <span>AI &amp; Data Science Student</span>
                 <span className="text-white/30">·</span>
                 <span className="text-[#8E9AAE]">Zagazig, EG</span>
               </div>

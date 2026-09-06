@@ -54,14 +54,17 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content Container */}
-      <main className="relative max-w-[1200px] mx-auto px-6 pb-24">
+      <main className="relative max-w-[1200px] mx-auto px-6">
         <Hero />
         <KpiRibbon />
         <CaseStudies />
         <CompetitiveSection />
         <SkillsSection />
-        <ContactSection />
       </main>
+
+      <div className="relative max-w-[1200px] mx-auto px-6 pb-24">
+        <ContactSection />
+      </div>
     </div>
   );
 }

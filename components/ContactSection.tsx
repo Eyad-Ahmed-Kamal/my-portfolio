@@ -43,15 +43,15 @@ export default function ContactSection() {
           <div>
             <div className="inline-flex items-center gap-2 font-mono text-xs text-emerald-400 font-semibold mb-4">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-              <span>Open to Summer 2026 Internships</span>
+              <span>Seeking Summer 2026 Internships</span>
             </div>
 
             <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-[#E8EDF5] leading-tight mb-4">
-              Let&apos;s talk about your data model.
+              Let&apos;s build data solutions together.
             </h3>
 
             <p className="text-base text-[#A9B4C6] leading-relaxed max-w-md">
-              Whether it&apos;s architecting a clean star schema from scratch, tuning complex DAX time intelligence, or discussing AI engineering workflows.
+              Interested in Business Intelligence, Data Analytics, and Data Engineering roles. Always eager to learn, contribute to real-world pipelines, and collaborate.
             </p>
           </div>
 
@@ -113,7 +113,6 @@ export default function ContactSection() {
                 href="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Eyad_Ahmed_Kamal_Resume.pdf"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-cyan-400/30 bg-cyan-400/10 text-sm font-semibold text-cyan-300 hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all text-center"
               >
                 <Download className="w-4 h-4" />
@@ -129,7 +128,7 @@ export default function ContactSection() {
         <div className="flex items-center gap-2">
           <span>Eyad Ahmed Kamal Mostafa</span>
           <span className="opacity-30">·</span>
-          <span>BI &amp; Star Schema Architect</span>
+          <span>AI &amp; Data Science Student</span>
         </div>
         <div>
           <span>Zagazig, Egypt · 2026</span>

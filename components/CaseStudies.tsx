@@ -17,10 +17,10 @@ export default function CaseStudies() {
         <div className="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent" />
       </div>
       <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-[-0.03em] text-[#E8EDF5] mb-3">
-        Architecture, not dashboards.
+        Featured BI Case Studies
       </h2>
       <p className="text-base text-[#8E9AAE] max-w-2xl mb-10 leading-relaxed">
-        Two end-to-end BI deliveries where the model — grain, surrogate keys, and central measure layer — did the heavy lifting.
+        End-to-end business intelligence projects emphasizing dimensional data modeling, centralized DAX calculations, and clean analytical delivery.
       </p>
 
       {/* Bento Grid */}
@@ -36,13 +36,13 @@ export default function CaseStudies() {
               {/* Badges */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-300 border border-cyan-400/25">
-                  Team Lead
+                  DEPI Capstone Project
+                </span>
+                <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-emerald-400/10 text-emerald-300 border border-emerald-400/25">
+                  Team Lead (4 Members)
                 </span>
                 <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.05] text-[#8E9AAE] border border-white/10">
-                  DEPI Capstone
-                </span>
-                <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.05] text-[#8E9AAE] border border-white/10">
-                  Power BI · DAX · SQL
+                  Power BI · DAX · Star Schema
                 </span>
               </div>
 
@@ -51,7 +51,7 @@ export default function CaseStudies() {
                 UK Train Rides Analytics Platform
               </h3>
               <p className="text-sm sm:text-base leading-relaxed text-[#A9B4C6] mb-6">
-                31,653 rail transactions (Jan–Apr 2024) modeled into a single source of truth, then surfaced as an executive summary a non-technical stakeholder can act on in one screen.
+                Led a 4-member team to model and analyze 31,653 UK rail transactions (Jan–Apr 2024), building a cohesive star schema and delivering an interactive summary for tracking revenue, punctuality, and route volume.
               </p>
 
               {/* Key Deliverables */}
@@ -61,7 +61,7 @@ export default function CaseStudies() {
                     01
                   </span>
                   <p className="text-sm text-[#A9B4C6] leading-relaxed">
-                    <strong className="text-[#E8EDF5]">1 Fact + 5 Dimension Star Schema:</strong> Surrogate keys enforcing referential integrity across every report page.
+                    <strong className="text-[#E8EDF5]">1 Fact + 5 Dimensions Star Schema:</strong> Modeled granular ticket transactions in <code className="font-mono text-xs text-cyan-300">Fact_TrainRides</code> with surrogate foreign keys referencing <code className="font-mono text-xs text-cyan-300">Dim_Date</code>, <code className="font-mono text-xs text-cyan-300">Dim_Station</code>, <code className="font-mono text-xs text-cyan-300">Dim_Route</code>, <code className="font-mono text-xs text-cyan-300">Dim_Ticket</code>, and <code className="font-mono text-xs text-cyan-300">Dim_Passenger</code>.
                   </p>
                 </div>
 
@@ -70,7 +70,7 @@ export default function CaseStudies() {
                     02
                   </span>
                   <p className="text-sm text-[#A9B4C6] leading-relaxed">
-                    <strong className="text-[#E8EDF5]">Executive Summary Page:</strong> Revenue, punctuality, and demand condensed for decision-makers, not passive exploration.
+                    <strong className="text-[#E8EDF5]">Centralized DAX Measure Layer:</strong> Standardized core business calculations including Total Revenue, On-Time Journey %, and Revenue LY to eliminate measure divergence across report pages.
                   </p>
                 </div>
 
@@ -79,7 +79,7 @@ export default function CaseStudies() {
                     03
                   </span>
                   <p className="text-sm text-[#A9B4C6] leading-relaxed">
-                    <strong className="text-[#E8EDF5]">Cross-Team Design System:</strong> Standardized palette, typography, and measure naming enforced across 4 teammates so all pages read as one unified product.
+                    <strong className="text-[#E8EDF5]">Team Coordination &amp; Quality Review:</strong> Guided 4 teammates through data modeling best practices, shared measure repositories, and unified visual styling for our final DEPI presentation.
                   </p>
                 </div>
               </div>
@@ -192,14 +192,14 @@ export default function CaseStudies() {
                     <div>
                       <span className="text-emerald-400 font-semibold">Total Revenue</span>{" "}
                       <span className="text-white/40">=</span>
-                      <div className="pl-4 text-[#A9B4C6]">SUMX( Fact_TrainRides, [Price] )</div>
+                      <div className="pl-4 text-[#A9B4C6]">SUM( Fact_TrainRides[Price] )</div>
                     </div>
 
                     <div>
                       <span className="text-emerald-400 font-semibold">On-Time Rate %</span>{" "}
                       <span className="text-white/40">=</span>
                       <div className="pl-4 text-[#A9B4C6]">
-                        DIVIDE( [On-Time Journeys], [Total Journeys] )
+                        DIVIDE( [On-Time Journeys], [Total Journeys], 0 )
                       </div>
                     </div>
 
@@ -215,7 +215,7 @@ export default function CaseStudies() {
                       <span className="text-emerald-400 font-semibold">Avg Ticket Price</span>{" "}
                       <span className="text-white/40">=</span>
                       <div className="pl-4 text-[#A9B4C6]">
-                        DIVIDE( [Total Revenue], [Total Journeys] )
+                        DIVIDE( [Total Revenue], [Total Journeys], 0 )
                       </div>
                     </div>
 
@@ -229,53 +229,56 @@ export default function CaseStudies() {
           </div>
         </div>
 
-        {/* Project 2: BMW Global Sales Dashboard (2 Columns) */}
+        {/* Project 2: BMW Sales BI Dashboard (2 Columns) */}
         <div className="lg:col-span-2 rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.045] to-white/[0.015] backdrop-blur-md p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-emerald-400/10 text-emerald-300 border border-emerald-400/25">
-              Multi-page BI
+              Practice Dataset Project
+            </span>
+            <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-300 border border-cyan-400/25">
+              Dimensional Modeling
             </span>
             <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.05] text-[#8E9AAE] border border-white/10">
-              Time Intelligence
+              YoY Time Intelligence
             </span>
           </div>
 
           <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#E8EDF5] mb-3">
-            BMW Global Sales Analytics Dashboard
+            BMW Sales BI Dashboard
           </h3>
           <p className="text-sm sm:text-base leading-relaxed text-[#A9B4C6] mb-6">
-            A multi-page Power BI report over roughly $376M in global sales transactions, modeled across four analytical axes with YoY time-intelligence measures and drill-through capabilities.
+            A comprehensive sales intelligence dashboard built on a BMW training dataset to practice multi-axis dimensional modeling, time-intelligence DAX calculations (YoY, YTD), and hierarchical drill-through views.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#0B0F17]/40">
               <div className="font-mono text-xs text-cyan-400 font-semibold">Geography</div>
-              <div className="text-xs text-[#8E9AAE] mt-1.5">Region &amp; country revenue mix</div>
+              <div className="text-xs text-[#8E9AAE] mt-1.5">Regional revenue breakdown &amp; country mix</div>
             </div>
             <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#0B0F17]/40">
-              <div className="font-mono text-xs text-cyan-400 font-semibold">Vehicle Model</div>
-              <div className="text-xs text-[#8E9AAE] mt-1.5">Volume, price band, drill-through</div>
+              <div className="font-mono text-xs text-cyan-400 font-semibold">Vehicle Series</div>
+              <div className="text-xs text-[#8E9AAE] mt-1.5">Volume, price bands &amp; model drill-through</div>
             </div>
             <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#0B0F17]/40">
-              <div className="font-mono text-xs text-cyan-400 font-semibold">Channel</div>
-              <div className="text-xs text-[#8E9AAE] mt-1.5">Dealer vs. direct performance</div>
+              <div className="font-mono text-xs text-cyan-400 font-semibold">Sales Channel</div>
+              <div className="text-xs text-[#8E9AAE] mt-1.5">Dealer network vs. direct performance</div>
             </div>
             <div className="p-3.5 rounded-xl border border-white/[0.08] bg-[#0B0F17]/40">
-              <div className="font-mono text-xs text-cyan-400 font-semibold">Date</div>
-              <div className="text-xs text-[#8E9AAE] mt-1.5">YoY, YTD, rolling trend analysis</div>
+              <div className="font-mono text-xs text-cyan-400 font-semibold">Time Intelligence</div>
+              <div className="text-xs text-[#8E9AAE] mt-1.5">YoY growth, YTD pacing &amp; monthly trends</div>
             </div>
           </div>
         </div>
 
-        {/* Philosophy Card: "How I Work" (1 Column) */}
+        {/* Engineering Approach (1 Column) */}
         <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-500/[0.06] to-white/[0.015] backdrop-blur-md p-6 sm:p-8 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-wider mb-4">
               <Layers className="w-3.5 h-3.5" />
-              <span>How I Work</span>
+              <span>Engineering Approach</span>
             </div>
             <p className="text-sm sm:text-base leading-relaxed text-[#A9B4C6]">
-              Model first. Grain declared, surrogate keys generated, measures centralized — then visuals. It makes the report cheap to maintain and impossible to contradict itself.
+              Data modeling before visuals. Defining table grain clearly, using surrogate keys, and centralizing DAX measures ensures fast query performance, clean relationships, and reliable metrics.
             </p>
           </div>
 
@@ -285,21 +288,21 @@ export default function CaseStudies() {
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Grain</span>
               </span>
-              <span className="text-[#E8EDF5] font-semibold">Declared</span>
+              <span className="text-[#E8EDF5] font-semibold">Explicitly Declared</span>
             </div>
             <div className="flex justify-between items-center text-[#8E9AAE]">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Keys</span>
               </span>
-              <span className="text-[#E8EDF5] font-semibold">Surrogate</span>
+              <span className="text-[#E8EDF5] font-semibold">Surrogate 1-to-Many</span>
             </div>
             <div className="flex justify-between items-center text-[#8E9AAE]">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Measures</span>
               </span>
-              <span className="text-[#E8EDF5] font-semibold">Centralized</span>
+              <span className="text-[#E8EDF5] font-semibold">Central DAX Layer</span>
             </div>
           </div>
         </div>

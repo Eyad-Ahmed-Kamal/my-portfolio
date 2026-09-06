@@ -14,10 +14,10 @@ export default function CompetitiveSection() {
         <div className="flex-1 h-px bg-gradient-to-r from-white/15 to-transparent" />
       </div>
       <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold tracking-[-0.03em] text-[#E8EDF5] mb-3">
-        Competitive Programming &amp; Mathematical Rigor
+        Problem Solving &amp; Algorithmic Foundations
       </h2>
       <p className="text-base text-[#8E9AAE] max-w-2xl mb-10 leading-relaxed">
-        Algorithmic speed, strict edge-case handling, and correctness under pressure — translated directly into enterprise data engineering.
+        Developing algorithmic thinking, edge-case discipline, and complexity awareness through competitive programming and core computer science foundations.
       </p>
 
       {/* Grid */}
@@ -39,14 +39,14 @@ export default function CompetitiveSection() {
             <div className="flex items-center gap-2 mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="font-mono text-xs text-emerald-400 font-semibold uppercase tracking-wider">
-                ECPC 2026 — ICPC Qualifications
+                ECPC 2026 Qualifications · Team 4090
               </span>
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-[#E8EDF5] mb-2">
-              Zagazig University · Team 4090
+              Zagazig University Competitor
             </h3>
             <p className="text-sm text-[#8E9AAE] leading-relaxed">
-              Competed under standard ICPC rules (one shared computer, 3-person team, strict 5-hour time limit). Awarded <strong className="text-[#E8EDF5]">Honorable Mention</strong> by the ICPC Foundation, officially signed by William B. Poucher (ICPC Executive Director).
+              Represented Zagazig University in the Egyptian Collegiate Programming Contest (ECPC 2026 qualifications) alongside two teammates under standard ICPC rules (one shared machine, 3-person team, strict 5-hour limit). Awarded an <strong className="text-[#E8EDF5]">Honorable Mention</strong>.
             </p>
           </div>
         </div>
@@ -57,13 +57,13 @@ export default function CompetitiveSection() {
           <div className="p-6 sm:p-7 rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent relative overflow-hidden">
             <div className="flex items-center gap-2 font-mono text-xs text-emerald-300 mb-3">
               <Award className="w-4 h-4 text-emerald-400" />
-              <span className="uppercase tracking-wider">ICPC Foundation</span>
+              <span className="uppercase tracking-wider">ICPC Foundation Recognition</span>
             </div>
             <h4 className="text-xl font-semibold text-[#E8EDF5] mb-3">
               Honorable Mention Awardee
             </h4>
             <p className="text-sm text-[#A9B4C6] leading-relaxed">
-              Competitive programming is where data work gets its true engineering edge: time complexity awareness (<span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N log N)</span> vs <span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N²)</span>), edge-case instinct, and guaranteed mathematical correctness under constraints.
+              Competitive programming builds strong engineering discipline: thinking in Big-O time and space complexity (<span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N log N)</span> vs <span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N²)</span>), systematically testing boundary values, and writing bug-free logic under constraints.
             </p>
           </div>
 

@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
-  title: "Eyad Ahmed | BI & Star Schema Architect · AI & Data Science",
+  title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
   description:
-    "Portfolio of Eyad Ahmed Kamal Mostafa — AI & Data Science undergraduate at Zagazig University, Business Intelligence & Star Schema Architect, DAX specialist, and ECPC competitive programmer.",
+    "Portfolio of Eyad Ahmed — AI & Data Science undergraduate at Zagazig University building business intelligence solutions, star schema data models, DAX, and algorithmic problem solving.",
   keywords: [
     "Eyad Ahmed",
     "Eyad Ahmed Kamal Mostafa",
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Eyad Ahmed Kamal Mostafa" }],
   openGraph: {
-    title: "Eyad Ahmed | BI & Star Schema Architect · AI & Data Science",
+    title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
     description:
-      "Turning raw transactional data into governed models executives actually trust. Power BI, DAX, Star Schema, and Algorithmic Rigor.",
+      "AI & Data Science undergraduate building business intelligence solutions from the data model up. Power BI, DAX, Star Schema, and Algorithmic Rigor.",
     url: "https://eyadahmed.me",
     siteName: "Eyad Ahmed Portfolio",
     images: [
       {
-        url: "/uploads/Enhance_image_quality_to_professional_202605301343.jpeg",
-        width: 1200,
-        height: 630,
+        url: "/uploads/eyad_portrait.jpeg",
+        width: 900,
+        height: 1125,
         alt: "Eyad Ahmed Kamal Mostafa",
       },
     ],
@@ -57,10 +57,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eyad Ahmed | BI & Star Schema Architect · AI & Data Science",
+    title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
     description:
-      "Turning raw transactional data into governed models executives actually trust.",
-    images: ["/uploads/Enhance_image_quality_to_professional_202605301343.jpeg"],
+      "AI & Data Science undergraduate building business intelligence solutions from the data model up.",
+    images: ["/uploads/eyad_portrait.jpeg"],
   },
 };
 
