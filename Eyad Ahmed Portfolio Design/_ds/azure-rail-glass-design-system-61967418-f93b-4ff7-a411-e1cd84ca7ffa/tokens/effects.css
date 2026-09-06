@@ -1,0 +1,45 @@
+/* ── Effect tokens ─────────────────────────────────────────────────────
+   The glass system: radii, backdrop blur, and the soft diffused shadows
+   that "lift" panels rather than ground them. Depth here is optical
+   layering, not heavy dropshadows. */
+
+:root {
+  /* radii */
+  --radius-panel: 24px;     /* main panels */
+  --radius-element: 12px;   /* internal cards, buttons */
+  --radius-sm: 8px;         /* small chips / inputs */
+  --radius-full: 9999px;    /* circular totems — avatars, dots, logo */
+
+  /* backdrop blur */
+  --blur-glass: 16px;       /* main glass surfaces */
+  --blur-panel: 8px;        /* nested panels */
+
+  /* shadows — subtle, large-spread, low opacity */
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --shadow-glass-lift: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+  --shadow-button: 0 4px 14px 0 rgba(26, 91, 255, 0.25);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur: 200ms;
+  --dur-slow: 360ms;
+}
+
+/* ── Reusable glass utility (consumers can apply directly) ── */
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-glass);
+}
+.glass-card {
+  background: var(--surface-glass-panel);
+  backdrop-filter: blur(var(--blur-panel));
+  -webkit-backdrop-filter: blur(var(--blur-panel));
+  border: 1px solid var(--glass-border-soft);
+  border-radius: var(--radius-element);
+  box-shadow: var(--shadow-glass);
+}

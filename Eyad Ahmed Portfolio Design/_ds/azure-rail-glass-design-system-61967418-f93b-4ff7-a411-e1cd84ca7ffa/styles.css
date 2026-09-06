@@ -1,0 +1,12 @@
+/* ════════════════════════════════════════════════════════════════════
+   Azure Rail Glass — global stylesheet entry point.
+   Consumers link THIS file. It is an import manifest only; all rules live
+   in the imported token files. Order matters: fonts → tokens → base.
+   ════════════════════════════════════════════════════════════════════ */
+
+@import url('./tokens/fonts.css');
+@import url('./tokens/colors.css');
+@import url('./tokens/typography.css');
+@import url('./tokens/spacing.css');
+@import url('./tokens/effects.css');
+@import url('./tokens/base.css');

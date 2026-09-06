@@ -1,0 +1,48 @@
+/* ── Base / reset ──────────────────────────────────────────────────────
+   Minimal, opinionated base. Sets the ambient light gradient backdrop
+   that the glass surfaces layer over, and the default type. */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  /* ambient light field — soft cool wash so glass blur has something to catch */
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(120% 80% at 12% 0%, rgba(26, 91, 255, 0.10) 0%, transparent 55%),
+    radial-gradient(100% 90% at 100% 100%, rgba(0, 120, 212, 0.10) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-background) 0%, var(--color-background-deep) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  margin: 0;
+  line-height: var(--leading-snug);
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--color-azure);
+  text-decoration: none;
+}
+
+/* shared uppercase data-label treatment */
+.eyebrow {
+  font-family: var(--font-data);
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}

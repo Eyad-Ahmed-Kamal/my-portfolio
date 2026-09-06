@@ -1,0 +1,35 @@
+/* ── Typography tokens ─────────────────────────────────────────────────
+   Outfit for headings/display, Plus Jakarta Sans for body/UI, Geist for
+   data labels & numerics. Scale follows the brief: KPI 42 / display 36 /
+   h2 24 / subhead 18 / body 15 / label 12 (uppercase, tracked). */
+
+:root {
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-data: 'Geist', 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* sizes */
+  --text-kpi: 42px;        /* KPI values — Outfit 700 */
+  --text-display: 36px;    /* hero / page display — Outfit 600 */
+  --text-h1: 28px;
+  --text-h2: 24px;         /* section headline — Outfit 600 */
+  --text-subhead: 18px;    /* subheadings — Outfit 500 */
+  --text-lead: 18px;       /* hero body — Plus Jakarta 400 */
+  --text-body: 15px;       /* body — Plus Jakarta 400 */
+  --text-sm: 14px;         /* secondary / roles */
+  --text-label: 12px;      /* uppercase data labels — Geist 600 */
+
+  /* weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* line heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.4;
+  --leading-body: 1.6;
+
+  /* label treatment */
+  --tracking-label: 0.08em;  /* ~1px at 12px */
+}

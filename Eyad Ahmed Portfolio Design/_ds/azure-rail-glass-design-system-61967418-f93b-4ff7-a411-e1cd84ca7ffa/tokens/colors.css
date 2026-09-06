@@ -1,0 +1,48 @@
+/* ── Color tokens ──────────────────────────────────────────────────────
+   Azure Rail Glass palette. Anchored on Transport Blue for action, with
+   Deep Navy as the structural / high-emphasis color (from DESIGN.md) and
+   Azure as the supporting secondary. Surfaces are tiered transparency,
+   never solid — that is the heart of the glassmorphism system. */
+
+:root {
+  /* ── Brand ── */
+  --color-primary: #1A5BFF;          /* Transport Blue — actions, active tabs, data lines */
+  --color-primary-hover: #1149d6;
+  --color-navy: #003366;             /* Deep Navy — structural emphasis, headings, borders */
+  --color-azure: #0078D4;            /* Azure — secondary visuals, progress, links */
+
+  /* tinted primary washes (for badge / area fills) */
+  --color-primary-wash: rgba(26, 91, 255, 0.10);
+  --color-primary-wash-strong: rgba(26, 91, 255, 0.18);
+  --color-navy-wash: rgba(0, 51, 102, 0.08);
+
+  /* ── Neutrals / text ── */
+  --color-background: #F8F9FA;       /* light off-white base */
+  --color-background-deep: #EEF1F6;  /* secondary base for ambient gradient */
+  --color-text: #1E293B;             /* slate-dark — headings, primary body */
+  --color-muted: #64748B;            /* secondary text, axis labels, placeholders */
+  --color-faint: #94A3B8;            /* tertiary / disabled text */
+  --color-line: #E2E8F0;            /* desaturated land / hairline on solid surfaces */
+
+  /* ── Semantic ── */
+  --color-mint: #00D28A;             /* success, on-time, positive trend */
+  --color-mint-wash: rgba(0, 210, 138, 0.12);
+  --color-crimson: #FF4D6D;          /* delay, issue, negative trend */
+  --color-crimson-wash: rgba(255, 77, 109, 0.12);
+  --color-amber: #FFB020;            /* warning / at-risk */
+
+  /* ── Glass surfaces (tiered transparency) ── */
+  --surface-glass: rgba(255, 255, 255, 0.60);        /* default panel */
+  --surface-glass-strong: rgba(255, 255, 255, 0.85); /* main hero container */
+  --surface-glass-panel: rgba(255, 255, 255, 0.40);  /* nested internal card */
+  --surface-glass-row: rgba(255, 255, 255, 0.30);    /* data rows / list items */
+  --surface-glass-hover: rgba(255, 255, 255, 0.90);  /* hover state */
+  --surface-glass-input: rgba(255, 255, 255, 0.50);  /* search / form fields */
+
+  /* glass edges — bright top/left highlight simulating light on glass */
+  --glass-border: rgba(255, 255, 255, 0.80);
+  --glass-border-soft: rgba(255, 255, 255, 0.60);
+
+  /* divider gradient — navy → transparent (rail-line metaphor) */
+  --divider-gradient: linear-gradient(90deg, #003366 0%, rgba(0,51,102,0) 100%);
+}

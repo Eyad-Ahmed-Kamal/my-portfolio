@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-2f175e6d-679f-44c7-8205-7f7d9e33d765/styles.css">
+<script src="_ds/nocturne-2f175e6d-679f-44c7-8205-7f7d9e33d765/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root{ --ink:#0B0F17; --ink2:#0F141F; --acc:#22D3EE; --acc2:#34D399; --line:rgba(255,255,255,0.10); --tx:#E8EDF5; --tx2:#8E9AAE; }
+html,body{margin:0;padding:0;background:#0B0F17;color:#E8EDF5;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+*{box-sizing:border-box;}
+a{color:#22D3EE;text-decoration:none;}
+a:hover{color:#67E8F9;}
+::selection{background:rgba(34,211,238,0.25);}
+:focus-visible{outline:2px solid #22D3EE;outline-offset:3px;}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)}70%{box-shadow:0 0 0 10px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes sweep{0%{transform:translateX(-120%)}100%{transform:translateX(220%)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#0B0F17;position:relative;overflow:hidden;">
+
+<div style="position:absolute;top:-260px;left:-180px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,0.16),transparent 66%);filter:blur(30px);pointer-events:none;"></div>
+<div style="position:absolute;top:420px;right:-260px;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(52,211,153,0.13),transparent 66%);filter:blur(30px);pointer-events:none;"></div>
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 55% at 50% 0%,#000,transparent);pointer-events:none;"></div>
+
+<nav style="position:sticky;top:0;z-index:40;backdrop-filter:blur(18px);background:rgba(11,15,23,0.72);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-right:auto;">
+      <div style="width:30px;height:30px;border-radius:8px;border:1px solid rgba(34,211,238,0.45);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#22D3EE;background:rgba(34,211,238,0.08);">E</div>
+      <span style="font-size:14px;font-weight:600;letter-spacing:-0.01em;">Eyad Ahmed</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8E9AAE;">/ BI &amp; Data</span>
+    </div>
+    <div style="display:flex;gap:22px;font-size:13px;color:#8E9AAE;flex-wrap:wrap;">
+      <a href="#work" style="color:#8E9AAE;" style-hover="color:#E8EDF5">Case Studies</a>
+      <a href="#rigor" style="color:#8E9AAE;" style-hover="color:#E8EDF5">Competitive</a>
+      <a href="#skills" style="color:#8E9AAE;" style-hover="color:#E8EDF5">Skills</a>
+      <a href="#contact" style="color:#8E9AAE;" style-hover="color:#E8EDF5">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main style="position:relative;max-width:1200px;margin:0 auto;padding:0 24px 96px;">
+
+  <section style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr);gap:48px;align-items:center;padding:88px 0 64px;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;border:1px solid rgba(52,211,153,0.35);background:rgba(52,211,153,0.08);font-size:12.5px;font-weight:500;color:#6EE7B7;margin-bottom:28px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:#34D399;animation:pulseDot 2s infinite;"></span>
+        Available for Summer 2026 Internships
+      </div>
+      <h1 style="font-size:clamp(38px,5.2vw,64px);line-height:1.03;letter-spacing:-0.035em;font-weight:600;margin:0 0 22px;text-wrap:pretty;">
+        I turn raw transactional data into
+        <span style="background:linear-gradient(100deg,#22D3EE,#34D399);-webkit-background-clip:text;background-clip:text;color:transparent;">governed models</span>
+        executives actually trust.
+      </h1>
+      <p style="font-size:17px;line-height:1.62;color:#8E9AAE;max-width:600px;margin:0 0 34px;text-wrap:pretty;">
+        Undergraduate in AI &amp; Data Science at Zagazig University. I design star-schema warehouses, write time-intelligence DAX, and lead small analytics teams — with the algorithmic rigor of an ICPC-qualified competitive programmer.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px;">
+        <a href="#work" style="display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:10px;border:1px solid rgba(34,211,238,0.55);background:rgba(34,211,238,0.10);color:#A5F3FC;font-size:14px;font-weight:600;" style-hover="background:rgba(34,211,238,0.18);border-color:#22D3EE">Explore Case Studies →</a>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:10px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.03);color:#E8EDF5;font-size:14px;font-weight:600;" style-hover="background:rgba(255,255,255,0.07)">Download CV</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8E9AAE;">
+        <a href="https://github.com/" target="_blank" style="color:#8E9AAE;" style-hover="color:#22D3EE">GitHub</a>
+        <span style="opacity:.35;">·</span>
+        <a href="https://linkedin.com/" target="_blank" style="color:#8E9AAE;" style-hover="color:#22D3EE">LinkedIn</a>
+        <span style="opacity:.35;">·</span>
+        <a href="mailto:eyadahmedkamalego76@gmail.com" style="color:#8E9AAE;" style-hover="color:#22D3EE">Email</a>
+      </div>
+    </div>
+
+    <div style="position:relative;animation:floatY 7s ease-in-out infinite;">
+      <div style="position:absolute;inset:-14px;border-radius:26px;background:linear-gradient(140deg,rgba(34,211,238,0.28),rgba(52,211,153,0.18));filter:blur(28px);"></div>
+      <div style="position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);background:#0F141F;box-shadow:0 30px 70px -30px rgba(0,0,0,0.9);">
+        <img src="uploads/Enhance_image_quality_to_professional_202605301343.jpeg" alt="Eyad Ahmed Kamal Mostafa" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;filter:grayscale(0.15) contrast(1.04);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,15,23,0.88),transparent 52%);"></div>
+        <div style="position:absolute;left:18px;right:18px;bottom:16px;">
+          <div style="font-size:15px;font-weight:600;">Eyad Ahmed Kamal Mostafa</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;margin-top:4px;">BI &amp; Star Schema Architect · Zagazig, EG</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);padding:34px 0;margin-bottom:96px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-0.02em;color:#E8EDF5;">{{ k0 }}<span style="color:#22D3EE;">+</span></div>
+        <div style="font-size:12.5px;color:#8E9AAE;margin-top:7px;line-height:1.45;">UK rail transactions analyzed &amp; modeled</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-0.02em;color:#E8EDF5;"><span style="color:#34D399;">$</span>{{ k1 }}M</div>
+        <div style="font-size:12.5px;color:#8E9AAE;margin-top:7px;line-height:1.45;">BMW global sales dataset structured</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-0.02em;color:#E8EDF5;">{{ k2 }}</div>
+        <div style="font-size:12.5px;color:#8E9AAE;margin-top:7px;line-height:1.45;">Person BI analytics team led to delivery</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-0.02em;color:#E8EDF5;">ECPC <span style="color:#22D3EE;">'26</span></div>
+        <div style="font-size:12.5px;color:#8E9AAE;margin-top:7px;line-height:1.45;">ICPC qualifications — Honorable Mention</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="margin-bottom:96px;scroll-margin-top:80px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#22D3EE;">01 / case studies</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.14),transparent);"></div>
+    </div>
+    <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:600;letter-spacing:-0.03em;margin:0 0 12px;">Architecture, not dashboards.</h2>
+    <p style="font-size:16px;color:#8E9AAE;max-width:640px;margin:0 0 40px;line-height:1.6;">Two end-to-end BI builds where the model — grain, keys, and measure layer — did the heavy lifting.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+
+      <div style="grid-column:1/-1;border:1px solid rgba(255,255,255,0.10);border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,0.045),rgba(255,255,255,0.015));backdrop-filter:blur(14px);padding:32px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,0.13),transparent 68%);pointer-events:none;"></div>
+        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;align-items:start;">
+          <div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(34,211,238,0.12);color:#67E8F9;border:1px solid rgba(34,211,238,0.28);">Team Lead</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(255,255,255,0.05);color:#8E9AAE;border:1px solid rgba(255,255,255,0.10);">DEPI Capstone</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(255,255,255,0.05);color:#8E9AAE;border:1px solid rgba(255,255,255,0.10);">Power BI · DAX · SQL</span>
+            </div>
+            <h3 style="font-size:26px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;">UK Train Rides Analytics Platform</h3>
+            <p style="font-size:15px;line-height:1.65;color:#A9B4C6;margin:0 0 22px;">31,653 rail transactions modeled into a single source of truth, then surfaced as an executive summary a non-technical stakeholder can read in one screen.</p>
+            <div style="display:grid;gap:14px;">
+              <div style="display:flex;gap:12px;"><span style="color:#22D3EE;font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px;">01</span><span style="font-size:14px;line-height:1.55;color:#A9B4C6;">1 fact + 5 dimension star schema with surrogate keys enforcing referential integrity across every report page.</span></div>
+              <div style="display:flex;gap:12px;"><span style="color:#22D3EE;font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px;">02</span><span style="font-size:14px;line-height:1.55;color:#A9B4C6;">Executive summary covering revenue, punctuality and demand — designed for decisions, not exploration.</span></div>
+              <div style="display:flex;gap:12px;"><span style="color:#22D3EE;font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px;">03</span><span style="font-size:14px;line-height:1.55;color:#A9B4C6;">A unified design system — color, typography, measure naming — enforced across a 4-person team so pages read as one product.</span></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display:inline-flex;padding:3px;border-radius:10px;border:1px solid rgba(255,255,255,0.10);background:rgba(11,15,23,0.6);margin-bottom:16px;">
+              <button onClick="{{ showSchema }}" style="{{ tabA }}">Star Schema View</button>
+              <button onClick="{{ showDax }}" style="{{ tabB }}">DAX Measure Layer</button>
+            </div>
+
+            <sc-if value="{{ isSchema }}" hint-placeholder-val="{{ true }}">
+              <div style="border:1px solid rgba(255,255,255,0.10);border-radius:14px;background:rgba(11,15,23,0.55);padding:20px;">
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch;">
+                  <div style="border:1px solid rgba(255,255,255,0.10);border-radius:9px;padding:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8E9AAE;background:rgba(255,255,255,0.03);">Dim_Date<br><span style="color:#5C6779;">date_key</span></div>
+                  <div style="border:1px solid rgba(255,255,255,0.10);border-radius:9px;padding:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8E9AAE;background:rgba(255,255,255,0.03);">Dim_Station<br><span style="color:#5C6779;">station_key</span></div>
+                  <div style="border:1px solid rgba(255,255,255,0.10);border-radius:9px;padding:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8E9AAE;background:rgba(255,255,255,0.03);">Dim_Route<br><span style="color:#5C6779;">route_key</span></div>
+
+                  <div style="border:1px solid rgba(255,255,255,0.10);border-radius:9px;padding:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8E9AAE;background:rgba(255,255,255,0.03);align-self:center;">Dim_Ticket<br><span style="color:#5C6779;">ticket_key</span></div>
+                  <div style="border:1px solid rgba(34,211,238,0.45);border-radius:11px;padding:14px 10px;text-align:center;background:rgba(34,211,238,0.10);box-shadow:0 0 34px -8px rgba(34,211,238,0.5);">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;color:#A5F3FC;">Fact_TrainRides</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#67E8F9;margin-top:4px;">31,653 rows</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#5C6779;margin-top:4px;">grain: 1 ticket</div>
+                  </div>
+                  <div style="border:1px solid rgba(255,255,255,0.10);border-radius:9px;padding:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8E9AAE;background:rgba(255,255,255,0.03);align-self:center;">Dim_Passenger<br><span style="color:#5C6779;">passenger_key</span></div>
+                </div>
+                <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08);font-size:12px;color:#8E9AAE;line-height:1.5;">Surrogate keys on every dimension; the fact table holds keys and additive measures only.</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isDax }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px solid rgba(255,255,255,0.10);border-radius:14px;background:rgba(11,15,23,0.55);padding:20px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.85;overflow-x:auto;">
+                <div><span style="color:#34D399;">Total Revenue</span> <span style="color:#5C6779;">=</span></div>
+                <div style="padding-left:16px;color:#A9B4C6;">SUMX( Fact_TrainRides, [Price] )</div>
+                <div style="height:10px;"></div>
+                <div><span style="color:#34D399;">On-Time Rate %</span> <span style="color:#5C6779;">=</span></div>
+                <div style="padding-left:16px;color:#A9B4C6;">DIVIDE( [On-Time Journeys], [Total Journeys] )</div>
+                <div style="height:10px;"></div>
+                <div><span style="color:#34D399;">Revenue LY</span> <span style="color:#5C6779;">=</span></div>
+                <div style="padding-left:16px;color:#A9B4C6;">CALCULATE( [Total Revenue],</div>
+                <div style="padding-left:32px;color:#A9B4C6;">SAMEPERIODLASTYEAR( Dim_Date[Date] ) )</div>
+                <div style="height:10px;"></div>
+                <div><span style="color:#34D399;">Avg Ticket Price</span> <span style="color:#5C6779;">=</span></div>
+                <div style="padding-left:16px;color:#A9B4C6;">DIVIDE( [Total Revenue], [Total Journeys] )</div>
+                <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08);font-family:'Inter',sans-serif;font-size:12px;color:#8E9AAE;line-height:1.5;">One measure layer, consistently named — every page consumes the same definitions.</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 2;min-width:0;border:1px solid rgba(255,255,255,0.10);border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,0.045),rgba(255,255,255,0.015));backdrop-filter:blur(14px);padding:32px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(52,211,153,0.12);color:#6EE7B7;border:1px solid rgba(52,211,153,0.28);">Multi-page BI</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;border-radius:6px;background:rgba(255,255,255,0.05);color:#8E9AAE;border:1px solid rgba(255,255,255,0.10);">Time Intelligence</span>
+        </div>
+        <h3 style="font-size:24px;font-weight:600;letter-spacing:-0.02em;margin:0 0 12px;">BMW Global Sales Analytics Dashboard</h3>
+        <p style="font-size:15px;line-height:1.65;color:#A9B4C6;margin:0 0 24px;max-width:640px;">A multi-page report over roughly $376M in global transactions, sliced across four analytical axes with YoY time-intelligence measures and drill-through paths into individual model performance.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
+          <div style="border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:14px;background:rgba(11,15,23,0.4);"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;">Geography</div><div style="font-size:12.5px;color:#8E9AAE;margin-top:5px;">Region &amp; country revenue mix</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:14px;background:rgba(11,15,23,0.4);"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;">Vehicle Model</div><div style="font-size:12.5px;color:#8E9AAE;margin-top:5px;">Volume, price band, drill-through</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:14px;background:rgba(11,15,23,0.4);"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;">Channel</div><div style="font-size:12.5px;color:#8E9AAE;margin-top:5px;">Dealer vs. direct performance</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:14px;background:rgba(11,15,23,0.4);"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;">Date</div><div style="font-size:12.5px;color:#8E9AAE;margin-top:5px;">YoY, YTD, rolling trend</div></div>
+        </div>
+      </div>
+
+      <div style="min-width:0;border:1px solid rgba(255,255,255,0.10);border-radius:20px;background:linear-gradient(160deg,rgba(34,211,238,0.07),rgba(255,255,255,0.015));padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;margin-bottom:14px;">how i work</div>
+          <p style="font-size:15px;line-height:1.6;color:#A9B4C6;margin:0;">Model first. Grain declared, keys generated, measures centralized — then visuals. It makes the report cheap to extend and impossible to contradict itself.</p>
+        </div>
+        <div style="display:grid;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8E9AAE;">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px;"><span>grain</span><span style="color:#E8EDF5;">declared</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:7px;"><span>keys</span><span style="color:#E8EDF5;">surrogate</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>measures</span><span style="color:#E8EDF5;">centralized</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rigor" style="margin-bottom:96px;scroll-margin-top:80px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#34D399;">02 / rigor</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.14),transparent);"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
+      <div style="min-width:0;border:1px solid rgba(255,255,255,0.10);border-radius:20px;overflow:hidden;background:rgba(255,255,255,0.02);">
+        <img src="uploads/Wh.jpeg" alt="ECPC 2026 team at the contest desk" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;">
+        <div style="padding:22px;border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:15px;font-weight:600;">ECPC 2026 — ICPC Qualifications</div>
+          <div style="font-size:13px;color:#8E9AAE;margin-top:6px;line-height:1.5;">Team 4090 at the Egyptian Collegiate Programming Contest. Honorable Mention awarded by the ICPC Foundation.</div>
+        </div>
+      </div>
+      <div style="min-width:0;display:grid;gap:20px;align-content:start;">
+        <div style="border:1px solid rgba(52,211,153,0.28);border-radius:20px;padding:28px;background:linear-gradient(150deg,rgba(52,211,153,0.10),rgba(255,255,255,0.015));">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6EE7B7;margin-bottom:12px;">icpc foundation</div>
+          <div style="font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;">Honorable Mention</div>
+          <p style="font-size:14px;line-height:1.6;color:#A9B4C6;margin:0;">Competitive programming is where the data work gets its edge: complexity awareness, edge-case instinct, and correctness under a clock.</p>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.10);border-radius:20px;padding:28px;background:rgba(255,255,255,0.025);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8E9AAE;margin-bottom:16px;">foundations</div>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;">
+            <span style="font-size:12.5px;padding:7px 13px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);">Algorithms &amp; Problem Solving (C++)</span>
+            <span style="font-size:12.5px;padding:7px 13px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);">Statistics</span>
+            <span style="font-size:12.5px;padding:7px 13px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);">Probability</span>
+            <span style="font-size:12.5px;padding:7px 13px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);">Linear Algebra</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="margin-bottom:96px;scroll-margin-top:80px;">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#22D3EE;">03 / experience</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.14),transparent);"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px;">
+      <div>
+        <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin:0 0 26px;">Timeline</h3>
+        <div style="display:grid;gap:0;">
+          <div style="display:grid;grid-template-columns:12px 1fr;gap:18px;padding-bottom:28px;position:relative;">
+            <div style="position:relative;"><div style="width:11px;height:11px;border-radius:50%;background:#22D3EE;box-shadow:0 0 0 4px rgba(34,211,238,0.16);"></div><div style="position:absolute;left:5px;top:14px;bottom:-14px;width:1px;background:rgba(255,255,255,0.12);"></div></div>
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#22D3EE;">present</div>
+              <div style="font-size:15.5px;font-weight:600;margin-top:5px;">AI Data Annotator — Outlier.ai</div>
+              <div style="font-size:13.5px;color:#8E9AAE;margin-top:6px;line-height:1.55;">LLM fine-tuning work: response ranking, prompt evaluation and edge-case authoring against detailed rubrics.</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:12px 1fr;gap:18px;padding-bottom:28px;">
+            <div style="position:relative;"><div style="width:11px;height:11px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,0.16);"></div><div style="position:absolute;left:5px;top:14px;bottom:-14px;width:1px;background:rgba(255,255,255,0.12);"></div></div>
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6EE7B7;">graduated</div>
+              <div style="font-size:15.5px;font-weight:600;margin-top:5px;">DEPI Data Analysis Program</div>
+              <div style="font-size:13.5px;color:#8E9AAE;margin-top:6px;line-height:1.55;">Completed with the UK Train Rides capstone, delivered as team lead across a 4-person analytics team.</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:12px 1fr;gap:18px;">
+            <div><div style="width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,0.28);"></div></div>
+            <div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8E9AAE;">undergraduate</div>
+              <div style="font-size:15.5px;font-weight:600;margin-top:5px;">AI &amp; Data Science — Zagazig University</div>
+              <div style="font-size:13.5px;color:#8E9AAE;margin-top:6px;line-height:1.55;">Faculty coursework in machine learning, statistics and data engineering.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin:0 0 26px;">Skills matrix</h3>
+        <div style="display:grid;gap:14px;">
+          <sc-for list="{{ skills }}" as="s" hint-placeholder-count="7">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;">
+                <span style="font-size:14px;font-weight:500;">{{ s.name }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8E9AAE;">{{ s.note }}</span>
+              </div>
+              <div style="height:5px;border-radius:99px;background:rgba(255,255,255,0.07);overflow:hidden;">
+                <div style="{{ s.barStyle }}"></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="scroll-margin-top:80px;">
+    <div style="position:relative;border:1px solid rgba(255,255,255,0.12);border-radius:24px;overflow:hidden;background:linear-gradient(150deg,rgba(34,211,238,0.10),rgba(52,211,153,0.07),rgba(255,255,255,0.015));padding:52px 40px;">
+      <div style="position:absolute;top:-160px;left:40%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,0.16),transparent 68%);pointer-events:none;"></div>
+      <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:center;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#6EE7B7;margin-bottom:18px;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#34D399;animation:pulseDot 2s infinite;"></span>open to Summer 2026 internships
+          </div>
+          <h2 style="font-size:clamp(26px,3.2vw,38px);font-weight:600;letter-spacing:-0.03em;margin:0 0 14px;line-height:1.1;">Let's talk about your data model.</h2>
+          <p style="font-size:15.5px;color:#A9B4C6;line-height:1.6;margin:0;max-width:460px;">Happy to walk through the star schema, the DAX layer, or anything in between.</p>
+        </div>
+        <div style="display:grid;gap:12px;">
+          <button onClick="{{ copyEmail }}" style="{{ copyStyle }}">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;overflow:hidden;text-overflow:ellipsis;">eyadahmedkamalego76@gmail.com</span>
+            <span style="font-size:12px;font-weight:600;white-space:nowrap;">{{ copyLabel }}</span>
+          </button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <a href="https://github.com/" target="_blank" style="text-align:center;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.03);color:#E8EDF5;font-size:13.5px;font-weight:600;" style-hover="background:rgba(255,255,255,0.08)">GitHub</a>
+            <a href="https://linkedin.com/" target="_blank" style="text-align:center;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.03);color:#E8EDF5;font-size:13.5px;font-weight:600;" style-hover="background:rgba(255,255,255,0.08)">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:34px 4px 0;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#5C6779;">
+      <span>Eyad Ahmed Kamal Mostafa — BI &amp; Star Schema Architect</span>
+      <span>Zagazig, Egypt · 2026</span>
+    </div>
+  </section>
+
+</main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#22D3EE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#22D3EE&quot;,&quot;#818CF8&quot;,&quot;#F59E0B&quot;,&quot;#34D399&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;accentAlt&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#34D399&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#34D399&quot;,&quot;#22D3EE&quot;,&quot;#A78BFA&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;animateCounters&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { view: 'schema', copied: false, k: [0, 0, 0], ran: false };
+
+  componentDidMount() {
+    const acc = this.props.accent || '#22D3EE';
+    const acc2 = this.props.accentAlt || '#34D399';
+    document.documentElement.style.setProperty('--acc', acc);
+    document.documentElement.style.setProperty('--acc2', acc2);
+    if (this.props.animateCounters === false) {
+      this.setState({ k: [31653, 376, 4], ran: true });
+    } else {
+      requestAnimationFrame(() => this.run());
+    }
+  }
+
+  run() {
+    const targets = [31653, 376, 4];
+    const dur = 1700, t0 = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      this.setState({ k: targets.map(t => Math.round(t * e)) });
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  copyEmail() {
+    const email = 'eyadahmedkamalego76@gmail.com';
+    const done = () => { this.setState({ copied: true }); setTimeout(() => this.setState({ copied: false }), 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(email).then(done, done); else done();
+  }
+
+  tab(active) {
+    return 'padding:9px 15px;border-radius:8px;border:1px solid ' + (active ? 'rgba(34,211,238,0.45)' : 'transparent') +
+      ';background:' + (active ? 'rgba(34,211,238,0.14)' : 'transparent') +
+      ';color:' + (active ? '#A5F3FC' : '#8E9AAE') +
+      ";font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .18s;";
+  }
+
+  renderVals() {
+    const k = this.state.k;
+    const skills = [
+      { name: 'Power BI', pct: 94, note: 'multi-page reports' },
+      { name: 'DAX', pct: 90, note: 'time intelligence' },
+      { name: 'Star Schema / Dimensional Modeling', pct: 92, note: 'fact + dim design' },
+      { name: 'SQL', pct: 88, note: 'joins, window fns' },
+      { name: 'C++', pct: 86, note: 'competitive' },
+      { name: 'Python', pct: 80, note: 'pandas, analysis' },
+      { name: 'Advanced Excel', pct: 85, note: 'modeling, pivots' }
+    ].map(s => Object.assign({}, s, {
+      barStyle: 'height:100%;width:' + s.pct + '%;border-radius:99px;background:linear-gradient(90deg,#22D3EE,#34D399);transition:width 1.2s cubic-bezier(.2,.8,.2,1);'
+    }));
+
+    return {
+      k0: k[0].toLocaleString('en-US'),
+      k1: k[1].toLocaleString('en-US'),
+      k2: k[2],
+      isSchema: this.state.view === 'schema',
+      isDax: this.state.view === 'dax',
+      tabA: this.tab(this.state.view === 'schema'),
+      tabB: this.tab(this.state.view === 'dax'),
+      showSchema: () => this.setState({ view: 'schema' }),
+      showDax: () => this.setState({ view: 'dax' }),
+      copyEmail: () => this.copyEmail(),
+      copyLabel: this.state.copied ? 'Copied ✓' : 'Copy',
+      copyStyle: 'display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:16px 18px;border-radius:12px;cursor:pointer;text-align:left;transition:all .2s;border:1px solid ' +
+        (this.state.copied ? 'rgba(52,211,153,0.55)' : 'rgba(255,255,255,0.14)') +
+        ';background:' + (this.state.copied ? 'rgba(52,211,153,0.14)' : 'rgba(11,15,23,0.55)') +
+        ';color:' + (this.state.copied ? '#6EE7B7' : '#E8EDF5') + ';',
+      skills
+    };
+  }
+}
+</script>
+</body>
+</html>

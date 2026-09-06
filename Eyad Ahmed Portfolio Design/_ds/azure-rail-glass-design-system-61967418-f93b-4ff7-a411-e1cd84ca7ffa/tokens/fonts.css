@@ -1,0 +1,11 @@
+/* ── Webfonts ──────────────────────────────────────────────────────────
+   Azure Rail Glass uses three Google-hosted families:
+   - Outfit            → headings / display (geometric sans)
+   - Plus Jakarta Sans → body / UI text (humanist workhorse)
+   - Geist             → data labels, KPI numerics, technical text
+
+   NOTE: DESIGN.md specified "Metropolis" for display. Metropolis is not a
+   free Google font, so Outfit is used as the closest geometric substitute.
+   Swap in licensed Metropolis @font-face rules here if available. */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap');
