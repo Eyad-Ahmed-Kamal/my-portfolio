@@ -33,3 +33,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# personal notes / Claude memory files - NEVER commit
+info.md
+claude-legacy-memory.md
