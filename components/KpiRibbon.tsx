@@ -1,19 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
+
+const TARGET = 31653;
 
 export default function KpiRibbon() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const reduce = useReducedMotion();
   const [transactions, setTransactions] = useState(0);
 
   useEffect(() => {
     if (!isInView) return;
 
+    // Counting up is decorative; readers who opt out get the final number.
+    if (reduce) {
+      setTransactions(TARGET);
+      return;
+    }
+
     const duration = 1600;
     const start = performance.now();
-    const target = 31653;
+    const target = TARGET;
 
     const animate = (now: number) => {
       const elapsed = Math.min(1, (now - start) / duration);
@@ -29,7 +38,7 @@ export default function KpiRibbon() {
 
     const frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
-  }, [isInView]);
+  }, [isInView, reduce]);
 
   return (
     <section ref={ref} className="border-y border-white/[0.08] py-8 my-14 md:my-20 bg-white/[0.01]">

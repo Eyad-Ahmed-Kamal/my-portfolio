@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Award, Terminal, Binary } from "lucide-react";
+import { Award } from "lucide-react";
 
 export default function CompetitiveSection() {
   return (
@@ -63,17 +63,6 @@ export default function CompetitiveSection() {
             <p className="text-sm text-[#A9B4C6] leading-relaxed">
               What I take from contest practice: reasoning about time and space complexity (<span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N log N)</span> vs <span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N²)</span>), checking boundary cases, and getting logic right under a time limit.
             </p>
-          </div>
-
-          {/* Card 2: Core Foundations */}
-          <div className="p-6 sm:p-7 rounded-2xl border border-white/10 bg-[#0F141F]/80">
-            <div className="flex items-center gap-2 font-mono text-xs text-[#8E9AAE] mb-4">
-              <Terminal className="w-4 h-4 text-cyan-400" />
-              <span className="uppercase tracking-wider">Academic &amp; Problem Solving Core</span>
-            </div>
-
-            <div className="flex flex-wrap gap-2.5">
-            </div>
           </div>
         </div>
       </div>
