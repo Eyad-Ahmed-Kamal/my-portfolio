@@ -17,7 +17,8 @@ export default function HeroShowcase() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [26, -26]);
 
-  const cover = reportPages[0];
+  const HERO_INDEX = 1; // Executive Summary
+  const cover = reportPages[HERO_INDEX];
 
   return (
     <motion.figure
@@ -32,7 +33,7 @@ export default function HeroShowcase() {
 
         <motion.button
           type="button"
-          onClick={() => setOpenIndex(0)}
+          onClick={() => setOpenIndex(HERO_INDEX)}
           aria-label="Enlarge the Executive Summary report page"
           className="group relative block w-full rounded-2xl overflow-hidden border border-white/15 bg-[#0F141F] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.85)] cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           whileHover={reduce ? undefined : { scale: 1.008, y: -4 }}

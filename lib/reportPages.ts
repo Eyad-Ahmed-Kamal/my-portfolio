@@ -3,6 +3,13 @@ import type { LightboxImage } from "@/components/Lightbox";
 /** Real page dimensions, so no image is ever stretched or letterboxed. */
 export const reportPages: LightboxImage[] = [
   {
+    src: "/uploads/dash-project-cover.jpg",
+    title: "Project Overview",
+    alt: "UK Train Rides Analysis cover page: project overview describing 31,653 UK railway transactions from January to April 2024 across revenue, reliability and demand, plus the four team members",
+    width: 1600,
+    height: 897,
+  },
+  {
     src: "/uploads/dash-executive-summary.jpg",
     title: "Executive Summary",
     alt: "Executive Summary page: total revenue 741.9K, 32K rides, 86.8 percent on-time, average ticket 23.4, cancellation rate 5.9 percent, revenue and rides trend, station map, top stations by revenue",

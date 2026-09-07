@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import ElasticGrid from "@/components/ElasticGrid";
 import Hero from "@/components/Hero";
 import KpiRibbon from "@/components/KpiRibbon";
 import CaseStudies from "@/components/CaseStudies";
@@ -37,25 +38,13 @@ export default function Home() {
         }}
       />
 
-      {/* Subtle 72px Architectural Grid Overlay with Radial Fade */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-          maskImage:
-            "radial-gradient(ellipse 90% 55% at 50% 0%, #000 70%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 90% 55% at 50% 0%, #000 70%, transparent 100%)",
-        }}
-      />
+      <ElasticGrid />
 
       {/* Sticky Top Navigation */}
       <Navbar />
 
       {/* Main Content Container */}
-      <main className="relative max-w-[1200px] mx-auto px-6">
+      <main className="relative z-10 max-w-[1200px] mx-auto px-6">
         <Hero />
         <KpiRibbon />
         <Reveal>
@@ -69,7 +58,7 @@ export default function Home() {
         </Reveal>
       </main>
 
-      <div className="relative max-w-[1200px] mx-auto px-6 pb-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 pb-24">
         <Reveal>
           <ContactSection />
         </Reveal>

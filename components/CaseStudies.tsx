@@ -238,12 +238,12 @@ export default function CaseStudies() {
               <Layers className="w-3.5 h-3.5 text-cyan-400" />
               <span>Report pages</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {reportPages.slice(1).map((page, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {reportPages.map((page, i) => ({ page, i })).filter(({ i }) => i !== 1).map(({ page, i }) => (
                 <motion.button
                   type="button"
                   key={page.src}
-                  onClick={() => setGalleryIndex(i + 1)}
+                  onClick={() => setGalleryIndex(i)}
                   aria-label={`Enlarge the ${page.title} report page`}
                   className="group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl"
                   whileHover={{ y: -4 }}
@@ -256,7 +256,7 @@ export default function CaseStudies() {
                       alt={page.alt}
                       width={page.width}
                       height={page.height}
-                      sizes="(max-width: 640px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, 25vw"
                       className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                     <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05080E]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

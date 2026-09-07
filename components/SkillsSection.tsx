@@ -10,9 +10,7 @@ export default function SkillsSection() {
       skills: [
         { name: "Power BI", detail: "Multi-page reporting, interactive dashboards & visual hierarchy" },
         { name: "DAX", detail: "Time intelligence, CALCULATE, iterator functions (SUMX, AVERAGEX)" },
-        { name: "Star Schema Modeling", detail: "Fact/dimension separation, surrogate keys, 1:* relationships" },
         { name: "Advanced Excel", detail: "Power Query ETL, automated data cleanup & pivot models" },
-        { name: "Statistics & Probability", detail: "Descriptive & inferential statistics, probability distributions" },
       ],
     },
     {
@@ -23,7 +21,6 @@ export default function SkillsSection() {
       skills: [
         { name: "C++", detail: "Modern C++, STL, algorithms & competitive problem solving" },
         { name: "Python", detail: "Pandas, NumPy, data analysis workflows & automation scripts" },
-        { name: "SQL", detail: "Multi-table joins, aggregations, window functions & relational modeling" },
       ],
     },
   ];
@@ -54,7 +51,7 @@ export default function SkillsSection() {
               </div>
               <div className="pb-4">
                 <span className="font-mono text-[11px] text-cyan-400 uppercase tracking-wider font-semibold">
-                  Mar 2025 · Contract
+                  Mar 2025 · Contract · Ended
                 </span>
                 <h4 className="text-base sm:text-lg font-semibold text-[#E8EDF5] mt-1">
                   AI Data Annotator — Outlier.ai
