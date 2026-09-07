@@ -135,14 +135,14 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
                 <button
                   onClick={(e) => { e.stopPropagation(); go(-1); }}
                   aria-label="Previous report page"
-                  className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-rule-strong bg-ground/90 text-ink shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-white/10 hover:border-ink hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data-strong"
+                  className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border-2 border-ink/45 bg-ground/95 text-ink shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-white/20 hover:border-ink hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data-strong"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); go(1); }}
                   aria-label="Next report page"
-                  className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-rule-strong bg-ground/90 text-ink shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-white/10 hover:border-ink hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data-strong"
+                  className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border-2 border-ink/45 bg-ground/95 text-ink shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-white/20 hover:border-ink hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data-strong"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>

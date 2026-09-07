@@ -56,10 +56,10 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: "/uploads/eyad_portrait.jpeg",
-        width: 900,
-        height: 1125,
-        alt: "Eyad Ahmed Kamal Mostafa",
+        url: "/uploads/dash-executive-summary.jpg",
+        width: 1600,
+        height: 901,
+        alt: "Executive Summary page of the UK Train Rides Power BI report: 741.9K revenue, 32K rides, 86.8 percent on time",
       },
     ],
     locale: "en_US",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
     description:
       "AI & Data Science undergraduate building business intelligence solutions from the data model up.",
-    images: ["/uploads/eyad_portrait.jpeg"],
+    images: ["/uploads/dash-executive-summary.jpg"],
   },
 };
 

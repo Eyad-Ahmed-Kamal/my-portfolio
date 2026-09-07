@@ -155,7 +155,7 @@ export default function ElasticGrid() {
           else ctx!.lineTo(n.x, n.y);
         }
       }
-      ctx!.strokeStyle = "rgba(245,241,234,0.055)";
+      ctx!.strokeStyle = "rgba(245,241,234,0.085)";
       ctx!.lineWidth = 1;
       ctx!.stroke();
 

@@ -10,17 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         // Chrome — warm achromatic neutrals, no saturation anywhere.
-        ground: "var(--ground)",
-        surface: "var(--surface)",
-        "surface-2": "var(--surface-2)",
-        ink: "var(--text)",
-        "ink-muted": "var(--text-muted)",
-        rule: "var(--rule)",
-        "rule-strong": "var(--rule-strong)",
+        // `<alpha-value>` is what lets `bg-ground/70` and friends work.
+        ground: "rgb(var(--ground-rgb) / <alpha-value>)",
+        surface: "rgb(var(--surface-rgb) / <alpha-value>)",
+        "surface-2": "rgb(var(--surface-2-rgb) / <alpha-value>)",
+        ink: "rgb(var(--text-rgb) / <alpha-value>)",
+        "ink-muted": "rgb(var(--text-muted-rgb) / <alpha-value>)",
+        rule: "rgb(var(--text-rgb) / 0.1)",
+        "rule-strong": "rgb(var(--text-rgb) / 0.18)",
 
         // Data — the only saturated values, reserved for charts and figures.
-        data: "var(--data)",
-        "data-strong": "var(--data-strong)",
+        data: "rgb(var(--data-rgb) / <alpha-value>)",
+        "data-strong": "rgb(var(--data-strong-rgb) / <alpha-value>)",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
