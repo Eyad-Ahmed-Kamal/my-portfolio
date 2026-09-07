@@ -1,11 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Database, Code2, Layers, CheckCircle2 } from "lucide-react";
 
 export default function CaseStudies() {
   const [activeTab, setActiveTab] = useState<"schema" | "dax">("schema");
+
+  const reportPages = [
+    {
+      src: "/uploads/dash-revenue-deep-dive.jpg",
+      title: "Revenue Deep Dive",
+      alt: "Revenue Deep Dive page: refunded revenue, top 10 routes, revenue matrix by ticket class and type, route treemap, price band by month",
+    },
+    {
+      src: "/uploads/dash-operations-reliability.jpg",
+      title: "Operations & Reliability",
+      alt: "Operations and Reliability page: 86.8 percent on-time, cancellation rate, on-time performance gauge against a 90 percent target, delay reasons, delay distribution, worst routes",
+    },
+    {
+      src: "/uploads/dash-demand-booking.jpg",
+      title: "Demand & Booking",
+      alt: "Demand and Booking Patterns page: rides by day of week, month by day demand heatmap totalling 31,653 rides, departure hour profile, booking window split",
+    },
+  ];
 
   return (
     <section id="work" className="mb-24 md:mb-32 scroll-mt-24">
@@ -225,6 +244,33 @@ export default function CaseStudies() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Report pages */}
+          <div className="relative mt-8 pt-8 border-t border-white/[0.08]">
+            <div className="flex items-center gap-2 font-mono text-xs text-[#8E9AAE] uppercase tracking-wider mb-4">
+              <Layers className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Report pages</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {reportPages.map((page) => (
+                <figure key={page.src} className="group">
+                  <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0B0F17] transition-all group-hover:border-cyan-400/40">
+                    <Image
+                      src={page.src}
+                      alt={page.alt}
+                      width={1600}
+                      height={900}
+                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 font-mono text-[11px] text-[#8E9AAE]">
+                    {page.title}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </div>
