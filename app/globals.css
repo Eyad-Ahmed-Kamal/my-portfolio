@@ -48,21 +48,8 @@ body {
   }
 }
 
-@keyframes floatY {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
 .animate-pulse-dot {
   animation: pulseDot 2s infinite;
-}
-
-.animate-float-slow {
-  animation: floatY 6s ease-in-out infinite;
 }
 
 /* Custom subtle scrollbar */
