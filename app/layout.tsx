@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,7 +16,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://eyadahmed.me"),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
@@ -42,8 +44,8 @@ export const metadata: Metadata = {
     title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
     description:
       "AI & Data Science undergraduate building business intelligence solutions from the data model up. Power BI, DAX, Star Schema, and Algorithmic Rigor.",
-    url: "https://eyadahmed.me",
-    siteName: "Eyad Ahmed Portfolio",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
         url: "/uploads/eyad_portrait.jpeg",
@@ -64,6 +66,46 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Structured data so search engines and LinkedIn resolve the page to a person
+ * rather than an untyped document. Every claim here is one the page already
+ * makes in visible copy.
+ */
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Eyad Ahmed Kamal Mostafa",
+  alternateName: "Eyad Ahmed",
+  url: SITE_URL,
+  image: `${SITE_URL}/uploads/eyad_portrait.jpeg`,
+  email: "mailto:eyadahmedkamalego76@gmail.com",
+  jobTitle: "AI & Data Science Student",
+  description:
+    "AI & Data Science undergraduate at Zagazig University building business intelligence solutions from the data model up.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Zagazig",
+    addressCountry: "EG",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Zagazig University",
+    description: "Faculty of Computers and Information — AI & Data Science",
+  },
+  knowsAbout: [
+    "Business Intelligence",
+    "Power BI",
+    "DAX",
+    "Star Schema Data Modeling",
+    "C++",
+    "Python",
+  ],
+  sameAs: [
+    "https://github.com/Eyad-Ahmed-Kamal",
+    "https://linkedin.com/in/eyad-ahmed-76ai",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,6 +114,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-[#0B0F17] text-[#E8EDF5] min-h-screen antialiased selection:bg-cyan-500/25 selection:text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         {children}
       </body>
     </html>
