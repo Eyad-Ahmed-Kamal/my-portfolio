@@ -2,14 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Ink and paper: every surface, rule and label is a warm achromatic neutral.
+ * Saturated colour is reserved for data — charts and metric values — so the
+ * report screenshots stay the loudest thing on the page, and so the site
+ * chrome never fights the blue/amber/red semantics used inside the Power BI
+ * report itself.
+ */
 :root {
-  --ink: #0B0F17;
-  --ink2: #0F141F;
-  --acc: #22D3EE;
-  --acc2: #34D399;
-  --line: rgba(255, 255, 255, 0.10);
-  --tx: #E8EDF5;
-  --tx2: #8E9AAE;
+  --ground: #0c0b09;
+  --surface: #141210;
+  --surface-2: #1c1917;
+  --text: #f5f1ea;
+  --text-muted: #a19a8e;
+  --rule: rgba(245, 241, 234, 0.1);
+  --rule-strong: rgba(245, 241, 234, 0.18);
+
+  /* The only saturated values in the system. Validated as a single-hue
+     ordinal ramp against --ground: all checks pass, light end 3.65:1. */
+  --data: #256abf;
+  --data-strong: #3987e5;
 }
 
 html {
@@ -19,37 +31,53 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #0B0F17;
-  color: #E8EDF5;
+  background-color: var(--ground);
+  color: var(--text);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Figures reflow when digits change width; every number on this page is data. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
 ::selection {
-  background: rgba(34, 211, 238, 0.25);
-  color: #E8EDF5;
+  background: rgba(57, 135, 229, 0.3);
+  color: var(--text);
 }
 
 :focus-visible {
-  outline: 2px solid #22D3EE;
+  outline: 2px solid var(--data-strong);
   outline-offset: 3px;
 }
 
 @keyframes pulseDot {
   0% {
-    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55);
+    box-shadow: 0 0 0 0 rgba(57, 135, 229, 0.55);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(52, 211, 153, 0);
+    box-shadow: 0 0 0 10px rgba(57, 135, 229, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+    box-shadow: 0 0 0 0 rgba(57, 135, 229, 0);
   }
 }
 
 .animate-pulse-dot {
   animation: pulseDot 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-pulse-dot {
+    animation: none;
+  }
 }
 
 /* Custom subtle scrollbar */
@@ -58,14 +86,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0F17;
+  background: var(--ground);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--rule-strong);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 211, 238, 0.4);
+  background: rgba(57, 135, 229, 0.45);
 }

@@ -239,7 +239,7 @@ export default function CaseStudies() {
               <span>Report pages</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {reportPages.map((page, i) => ({ page, i })).filter(({ i }) => i !== 1).map(({ page, i }) => (
+              {reportPages.map((page, i) => (
                 <motion.button
                   type="button"
                   key={page.src}
