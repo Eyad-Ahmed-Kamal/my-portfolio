@@ -22,7 +22,7 @@ export default function CompetitiveSection() {
       <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6 items-start">
         {/* Contest Photo Card */}
         <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] overflow-hidden">
-          <div className="relative aspect-[16/10] w-full">
+          <div className="relative aspect-[3/2] w-full">
             <Image
               src="/uploads/Wh.jpeg"
               alt="ECPC 2026 team at the contest desk"

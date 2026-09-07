@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Reveal from "@/components/Reveal";
 import Hero from "@/components/Hero";
 import KpiRibbon from "@/components/KpiRibbon";
 import CaseStudies from "@/components/CaseStudies";
@@ -57,13 +58,21 @@ export default function Home() {
       <main className="relative max-w-[1200px] mx-auto px-6">
         <Hero />
         <KpiRibbon />
-        <CaseStudies />
-        <CompetitiveSection />
-        <SkillsSection />
+        <Reveal>
+          <CaseStudies />
+        </Reveal>
+        <Reveal>
+          <CompetitiveSection />
+        </Reveal>
+        <Reveal>
+          <SkillsSection />
+        </Reveal>
       </main>
 
       <div className="relative max-w-[1200px] mx-auto px-6 pb-24">
-        <ContactSection />
+        <Reveal>
+          <ContactSection />
+        </Reveal>
       </div>
     </div>
   );

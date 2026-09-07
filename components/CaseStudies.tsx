@@ -2,29 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Lightbox from "@/components/Lightbox";
+import { reportPages } from "@/lib/reportPages";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Database, Code2, Layers, CheckCircle2 } from "lucide-react";
 
 export default function CaseStudies() {
   const [activeTab, setActiveTab] = useState<"schema" | "dax">("schema");
-
-  const reportPages = [
-    {
-      src: "/uploads/dash-revenue-deep-dive.jpg",
-      title: "Revenue Deep Dive",
-      alt: "Revenue Deep Dive page: refunded revenue, top 10 routes, revenue matrix by ticket class and type, route treemap, price band by month",
-    },
-    {
-      src: "/uploads/dash-operations-reliability.jpg",
-      title: "Operations & Reliability",
-      alt: "Operations and Reliability page: 86.8 percent on-time, cancellation rate, on-time performance gauge against a 90 percent target, delay reasons, delay distribution, worst routes",
-    },
-    {
-      src: "/uploads/dash-demand-booking.jpg",
-      title: "Demand & Booking",
-      alt: "Demand and Booking Patterns page: rides by day of week, month by day demand heatmap totalling 31,653 rides, departure hour profile, booking window split",
-    },
-  ];
+  const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
 
   return (
     <section id="work" className="mb-24 md:mb-32 scroll-mt-24">
@@ -254,25 +239,42 @@ export default function CaseStudies() {
               <span>Report pages</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {reportPages.map((page) => (
-                <figure key={page.src} className="group">
-                  <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0B0F17] transition-all group-hover:border-cyan-400/40">
+              {reportPages.slice(1).map((page, i) => (
+                <motion.button
+                  type="button"
+                  key={page.src}
+                  onClick={() => setGalleryIndex(i + 1)}
+                  aria-label={`Enlarge the ${page.title} report page`}
+                  className="group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl"
+                  whileHover={{ y: -4 }}
+                  whileTap={{ scale: 0.985 }}
+                  transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  <div className="relative rounded-xl overflow-hidden border border-white/10 bg-[#0B0F17] transition-colors group-hover:border-cyan-400/45">
                     <Image
                       src={page.src}
                       alt={page.alt}
-                      width={1600}
-                      height={900}
+                      width={page.width}
+                      height={page.height}
                       sizes="(max-width: 640px) 100vw, 33vw"
-                      className="w-full h-auto"
+                      className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.04]"
                     />
+                    <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05080E]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <figcaption className="mt-2.5 font-mono text-[11px] text-[#8E9AAE]">
+                  <span className="mt-2.5 block font-mono text-[11px] text-[#8E9AAE] group-hover:text-cyan-300 transition-colors">
                     {page.title}
-                  </figcaption>
-                </figure>
+                  </span>
+                </motion.button>
               ))}
             </div>
           </div>
+
+          <Lightbox
+            images={reportPages}
+            index={galleryIndex}
+            onClose={() => setGalleryIndex(null)}
+            onNavigate={setGalleryIndex}
+          />
         </div>
 
         {/* Project 2: BMW Sales BI Dashboard (2 Columns) */}

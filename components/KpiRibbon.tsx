@@ -37,7 +37,7 @@ export default function KpiRibbon() {
         {/* Metric 1 */}
         <div className="space-y-1.5">
           <div className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#E8EDF5]">
-            {transactions.toLocaleString()}{" "}
+            {transactions.toLocaleString("en-US")}{" "}
             <span className="text-cyan-400 font-normal">+</span>
           </div>
           <p className="text-xs sm:text-sm text-[#8E9AAE] leading-snug">

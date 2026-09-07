@@ -1,4 +1,4 @@
-import Image from "next/image";
+import HeroShowcase from "@/components/HeroShowcase";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
@@ -61,30 +61,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Dashboard showcase - the actual work, up front */}
-      <figure className="relative mt-14 md:mt-16">
-        <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-cyan-500/20 via-teal-500/10 to-emerald-500/15 blur-2xl opacity-70 pointer-events-none" />
-
-        <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-[#0F141F] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.85)]">
-          <Image
-            src="/uploads/dash-executive-summary.jpg"
-            alt="Executive Summary page of the UK Train Rides Power BI report: total revenue 741.9K, 32K rides, 86.8 percent on-time, revenue trend, station map, and top stations by revenue"
-            width={1600}
-            height={901}
-            priority
-            sizes="(max-width: 768px) 100vw, 1200px"
-            className="w-full h-auto"
-          />
-        </div>
-
-        <figcaption className="mt-4 font-mono text-xs text-[#8E9AAE] flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className="text-cyan-400">UK Train Rides Analysis</span>
-          <span className="opacity-30">·</span>
-          <span>Executive Summary page</span>
-          <span className="opacity-30">·</span>
-          <span>Power BI over 31,653 rail transactions</span>
-        </figcaption>
-      </figure>
+      <HeroShowcase />
     </section>
   );
 }
