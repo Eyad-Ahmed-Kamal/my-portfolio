@@ -85,7 +85,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
           role="dialog"
           aria-modal="true"
           aria-label={`${current.title} — enlarged report page`}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#05080E]/92 backdrop-blur-sm p-4 sm:p-8"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ground/95 backdrop-blur-sm p-4 sm:p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -101,25 +101,25 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
             transition={{ duration: motionTokens.duration.normal, ease: motionTokens.easing.smooth }}
           >
             <div className="flex items-center justify-between gap-4 mb-3" onClick={(e) => e.stopPropagation()}>
-              <p className="font-mono text-xs sm:text-sm text-cyan-300">
+              <p className="font-mono text-xs sm:text-sm text-ink">
                 {current.title}
-                <span className="text-[#8E9AAE] ml-2">
+                <span className="text-ink-muted ml-2">
                   {index + 1} / {images.length}
                 </span>
-                <span className="hidden sm:inline text-[#8E9AAE] ml-3 opacity-70">
+                <span className="hidden sm:inline text-ink-muted ml-3 opacity-70">
                   click anywhere outside to close
                 </span>
               </p>
               <button
                 onClick={onClose}
                 aria-label="Close enlarged view"
-                className="p-2 rounded-lg border border-white/15 bg-white/[0.04] text-[#E8EDF5] hover:bg-white/[0.1] hover:border-white/30 transition-colors"
+                className="p-2 rounded-lg border border-rule-strong bg-white/[0.04] text-ink hover:bg-white/[0.1] hover:border-rule-strong transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <div className="rounded-xl overflow-hidden border border-white/15 bg-[#0B0F17]" onClick={(e) => e.stopPropagation()}>
+            <div className="rounded-xl overflow-hidden border border-rule-strong bg-ground" onClick={(e) => e.stopPropagation()}>
               <Image
                 src={current.src}
                 alt={current.alt}
@@ -135,14 +135,14 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
                 <button
                   onClick={(e) => { e.stopPropagation(); go(-1); }}
                   aria-label="Previous report page"
-                  className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-white/30 bg-[#0B0F17]/90 text-[#E8EDF5] shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-cyan-400/25 hover:border-cyan-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                  className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-rule-strong bg-ground/90 text-ink shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-white/10 hover:border-ink hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data-strong"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); go(1); }}
                   aria-label="Next report page"
-                  className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-white/30 bg-[#0B0F17]/90 text-[#E8EDF5] shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-cyan-400/25 hover:border-cyan-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                  className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-rule-strong bg-ground/90 text-ink shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-white/10 hover:border-ink hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data-strong"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>

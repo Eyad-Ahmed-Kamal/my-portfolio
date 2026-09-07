@@ -19,6 +19,9 @@ export default function ElasticGrid() {
     if (!canvas || !ctx) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // No hover on touch, so the lattice would cost frames to no purpose.
+    const coarse = !window.matchMedia("(pointer: fine)").matches;
+    if (coarse) return;
 
     const INTERACTIVE = "a, button, input, textarea, select, [role=dialog]";
 
@@ -152,7 +155,7 @@ export default function ElasticGrid() {
           else ctx!.lineTo(n.x, n.y);
         }
       }
-      ctx!.strokeStyle = "rgba(255,255,255,0.062)";
+      ctx!.strokeStyle = "rgba(245,241,234,0.055)";
       ctx!.lineWidth = 1;
       ctx!.stroke();
 
@@ -181,7 +184,7 @@ export default function ElasticGrid() {
             }
           }
         }
-        ctx!.strokeStyle = grab.active ? "rgba(34,211,238,0.46)" : "rgba(34,211,238,0.26)";
+        ctx!.strokeStyle = grab.active ? "rgba(57,135,229,0.5)" : "rgba(57,135,229,0.28)";
         ctx!.lineWidth = grab.active ? 1.25 : 1;
         ctx!.stroke();
       }

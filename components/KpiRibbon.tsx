@@ -41,45 +41,44 @@ export default function KpiRibbon() {
   }, [isInView, reduce]);
 
   return (
-    <section ref={ref} className="border-y border-white/[0.08] py-8 my-14 md:my-20 bg-white/[0.01]">
+    <section ref={ref} className="border-y border-rule py-8 my-14 md:my-20 bg-white/[0.01]">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
         {/* Metric 1 */}
         <div className="space-y-1.5">
-          <div className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#E8EDF5]">
-            {transactions.toLocaleString("en-US")}{" "}
-            <span className="text-cyan-400 font-normal">+</span>
+          <div className="tnum font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-ink">
+            <span className="text-data-strong">{transactions.toLocaleString("en-US")}</span>
           </div>
-          <p className="text-xs sm:text-sm text-[#8E9AAE] leading-snug">
+          <p className="text-xs sm:text-sm text-ink-muted leading-snug">
             Rail Transactions Modeled (UK Rail Capstone)
           </p>
         </div>
 
         {/* Metric 2 */}
         <div className="space-y-1.5">
-          <div className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#E8EDF5]">
+          <div className="tnum font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-ink">
             4-Member
           </div>
-          <p className="text-xs sm:text-sm text-[#8E9AAE] leading-snug">
+          <p className="text-xs sm:text-sm text-ink-muted leading-snug">
             Team Led (DEPI Capstone Delivery)
           </p>
         </div>
 
         {/* Metric 3 */}
         <div className="space-y-1.5">
-          <div className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#E8EDF5]">
-            ECPC <span className="text-emerald-400 font-normal">2026</span>
+          <div className="tnum font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-ink">
+            ECPC <span className="text-ink-muted font-normal">2026</span>
           </div>
-          <p className="text-xs sm:text-sm text-[#8E9AAE] leading-snug">
+          <p className="text-xs sm:text-sm text-ink-muted leading-snug">
             Contestant (ECPC Qualifications · Honorable Mention)
           </p>
         </div>
 
         {/* Metric 4 */}
         <div className="space-y-1.5">
-          <div className="font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#E8EDF5]">
-            Class <span className="text-cyan-400 font-normal">of &apos;29</span>
+          <div className="tnum font-mono text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-ink">
+            Class <span className="text-ink-muted font-normal">of &apos;29</span>
           </div>
-          <p className="text-xs sm:text-sm text-[#8E9AAE] leading-snug">
+          <p className="text-xs sm:text-sm text-ink-muted leading-snug">
             Zagazig University (AI &amp; Data Science)
           </p>
         </div>

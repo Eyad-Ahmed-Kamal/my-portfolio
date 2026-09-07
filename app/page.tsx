@@ -10,31 +10,18 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0B0F17] text-[#E8EDF5] relative overflow-hidden">
-      {/* Top Left Radial Glow (Cyan) */}
+    <div className="min-h-screen bg-ground text-ink relative overflow-hidden">
+      {/*
+        One warm lift behind the masthead, anchored to the top of the page.
+        The three glows this replaces were pinned to hardcoded pixel offsets
+        (top-[420px], top-[1400px]) and would have drifted to meaningless
+        places the moment any section changed height.
+      */}
       <div
-        className="pointer-events-none absolute -top-[260px] -left-[180px] w-[760px] h-[760px] rounded-full blur-[30px] opacity-100"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[70vh]"
         style={{
           background:
-            "radial-gradient(circle, rgba(34, 211, 238, 0.16) 0%, transparent 66%)",
-        }}
-      />
-
-      {/* Hero Right Radial Glow (Emerald) */}
-      <div
-        className="pointer-events-none absolute top-[420px] -right-[260px] w-[720px] h-[720px] rounded-full blur-[30px] opacity-100"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(52, 211, 153, 0.13) 0%, transparent 66%)",
-        }}
-      />
-
-      {/* Mid-page Ambient Radial Glow (Cyan / Emerald accent blend) */}
-      <div
-        className="pointer-events-none absolute top-[1400px] -left-[200px] w-[680px] h-[680px] rounded-full blur-[40px] opacity-70"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 68%)",
+            "radial-gradient(ellipse 70% 100% at 50% 0%, rgba(245, 241, 234, 0.05) 0%, transparent 70%)",
         }}
       />
 
