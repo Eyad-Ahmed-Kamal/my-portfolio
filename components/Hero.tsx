@@ -1,11 +1,13 @@
+import Image from "next/image";
 import HeroShowcase from "@/components/HeroShowcase";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative pt-16 pb-16 md:pt-24 md:pb-20">
-      {/* Pitch */}
-      <div className="max-w-[860px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-10 lg:gap-16 items-center">
+        {/* Pitch */}
+        <div>
         <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-medium mb-7">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
           <span>Open to Internship Opportunities</span>
@@ -59,6 +61,26 @@ export default function Hero() {
             <span>Email</span>
           </a>
         </div>
+        </div>
+
+        {/* Portrait — source is 2048x2048, so a square frame keeps it undistorted */}
+        <figure className="relative mx-auto w-full max-w-[300px] lg:max-w-none">
+          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-cyan-500/18 via-teal-500/10 to-emerald-500/14 blur-2xl opacity-70 pointer-events-none" />
+          <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/12 bg-[#0B0F17] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.9)]">
+            <Image
+              src="/uploads/eyad-portrait.jpg"
+              alt="Portrait of Eyad Ahmed Kamal Mostafa, rim-lit profile silhouette"
+              width={1000}
+              height={1000}
+              priority
+              sizes="(max-width: 1024px) 300px, 300px"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 text-center lg:text-left font-mono text-[11px] text-[#8E9AAE]">
+            Eyad Ahmed Kamal Mostafa · Zagazig, EG
+          </figcaption>
+        </figure>
       </div>
 
       <HeroShowcase />

@@ -52,16 +52,16 @@ export default function CompetitiveSection() {
         {/* Rigor Value Props */}
         <div className="space-y-6">
           {/* Card 1: Honorable Mention */}
-          <div className="p-6 sm:p-7 rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent relative overflow-hidden">
+          <div className="p-6 sm:p-7 rounded-2xl border border-white/10 bg-[#0F141F]/80">
             <div className="flex items-center gap-2 font-mono text-xs text-emerald-300 mb-3">
               <Award className="w-4 h-4 text-emerald-400" />
               <span className="uppercase tracking-wider">ECPC 2026 · Qualifications</span>
             </div>
-            <h4 className="text-xl font-semibold text-[#E8EDF5] mb-3">
-              Honorable Mention Awardee
+            <h4 className="text-lg font-semibold text-[#E8EDF5] mb-3">
+              Honorable Mention
             </h4>
             <p className="text-sm text-[#A9B4C6] leading-relaxed">
-              Competitive programming builds strong engineering discipline: thinking in Big-O time and space complexity (<span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N log N)</span> vs <span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N²)</span>), systematically testing boundary values, and writing bug-free logic under constraints.
+              What I take from contest practice: reasoning about time and space complexity (<span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N log N)</span> vs <span className="font-mono text-xs text-cyan-300 px-1 py-0.5 rounded bg-white/[0.06]">O(N²)</span>), checking boundary cases, and getting logic right under a time limit.
             </p>
           </div>
 

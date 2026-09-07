@@ -99,13 +99,15 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: reduce ? 1 : 0.97, y: 0 }}
             transition={{ duration: motionTokens.duration.normal, ease: motionTokens.easing.smooth }}
-            onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between gap-4 mb-3">
+            <div className="flex items-center justify-between gap-4 mb-3" onClick={(e) => e.stopPropagation()}>
               <p className="font-mono text-xs sm:text-sm text-cyan-300">
                 {current.title}
                 <span className="text-[#8E9AAE] ml-2">
                   {index + 1} / {images.length}
+                </span>
+                <span className="hidden sm:inline text-[#8E9AAE] ml-3 opacity-70">
+                  click anywhere outside to close
                 </span>
               </p>
               <button
@@ -117,7 +119,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
               </button>
             </div>
 
-            <div className="rounded-xl overflow-hidden border border-white/15 bg-[#0B0F17]">
+            <div className="rounded-xl overflow-hidden border border-white/15 bg-[#0B0F17]" onClick={(e) => e.stopPropagation()}>
               <Image
                 src={current.src}
                 alt={current.alt}
@@ -129,22 +131,22 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
             </div>
 
             {images.length > 1 && (
-              <div className="flex items-center justify-center gap-3 mt-4">
+              <>
                 <button
-                  onClick={() => go(-1)}
+                  onClick={(e) => { e.stopPropagation(); go(-1); }}
                   aria-label="Previous report page"
-                  className="p-2.5 rounded-lg border border-white/15 bg-white/[0.04] text-[#E8EDF5] hover:bg-white/[0.1] hover:border-cyan-400/40 transition-colors"
+                  className="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-white/30 bg-[#0B0F17]/90 text-[#E8EDF5] shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-cyan-400/25 hover:border-cyan-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={() => go(1)}
+                  onClick={(e) => { e.stopPropagation(); go(1); }}
                   aria-label="Next report page"
-                  className="p-2.5 rounded-lg border border-white/15 bg-white/[0.04] text-[#E8EDF5] hover:bg-white/[0.1] hover:border-cyan-400/40 transition-colors"
+                  className="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-10 grid place-items-center w-12 h-12 rounded-full border border-white/30 bg-[#0B0F17]/90 text-[#E8EDF5] shadow-[0_8px_24px_-6px_rgba(0,0,0,0.9)] hover:bg-cyan-400/25 hover:border-cyan-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-6 h-6" />
                 </button>
-              </div>
+              </>
             )}
           </motion.div>
         </motion.div>

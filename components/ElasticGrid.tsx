@@ -20,11 +20,23 @@ export default function ElasticGrid() {
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const SPACING = 54;      // grid pitch in px
-    const RADIUS = 210;      // pointer influence radius
-    const PUSH = 30;         // peak displacement
-    const STIFFNESS = 0.11;  // spring constant
-    const DAMPING = 0.84;    // velocity retention
+    const INTERACTIVE = "a, button, input, textarea, select, [role=dialog]";
+
+    const SPACING = 54;           // grid pitch in px
+
+    // Hovering only nudges the sheet aside.
+    const HOVER_RADIUS = 185;
+    const HOVER_PUSH = 16;
+
+    // Grabbing hauls it along, up to the point where it gives.
+    const GRAB_RADIUS = 320;
+    const MAX_STRETCH = 190;
+
+    // Viscous while held, springy once released — that is what reads as rubber.
+    const STIFF_DRAG = 0.042;
+    const DAMP_DRAG = 0.8;
+    const STIFF_FREE = 0.075;
+    const DAMP_FREE = 0.915;
 
     type Node = { ox: number; oy: number; x: number; y: number; vx: number; vy: number };
 
@@ -35,7 +47,8 @@ export default function ElasticGrid() {
     let height = 0;
     let raf = 0;
     let settled = false;
-    const pointer = { x: -9999, y: -9999, active: false, press: 1 };
+    const pointer = { x: -9999, y: -9999, inside: false };
+    const grab = { active: false, ox: 0, oy: 0, dx: 0, dy: 0 };
 
     function build() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -62,34 +75,62 @@ export default function ElasticGrid() {
     const at = (r: number, c: number) => nodes[r * cols + c];
 
     function step() {
+      const stiff = grab.active ? STIFF_DRAG : STIFF_FREE;
+      const damp = grab.active ? DAMP_DRAG : DAMP_FREE;
+      const gr2 = GRAB_RADIUS * GRAB_RADIUS;
+      const hr2 = HOVER_RADIUS * HOVER_RADIUS;
+
+      // Past MAX_STRETCH the sheet stops following and starts slipping.
+      let dragX = grab.dx;
+      let dragY = grab.dy;
+      const pull = Math.hypot(dragX, dragY);
+      if (pull > MAX_STRETCH) {
+        const k = MAX_STRETCH / pull;
+        dragX *= k;
+        dragY *= k;
+      }
+
       let moving = false;
-      const r2 = RADIUS * RADIUS;
 
       for (const n of nodes) {
         let tx = n.ox;
         let ty = n.oy;
 
-        if (pointer.active) {
+        if (grab.active) {
+          // Held: nodes near the grab point travel with the pointer.
+          const dx = n.ox - grab.ox;
+          const dy = n.oy - grab.oy;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < gr2 * 3) {
+            const falloff = Math.exp(-d2 / gr2);
+            tx += dragX * falloff;
+            ty += dragY * falloff;
+          }
+        } else if (pointer.inside) {
+          // Free: a light shove away from the cursor.
           const dx = n.ox - pointer.x;
           const dy = n.oy - pointer.y;
           const d2 = dx * dx + dy * dy;
-          if (d2 < r2 * 2.5) {
-            const falloff = Math.exp(-d2 / r2);
+          if (d2 < hr2 * 3) {
+            const falloff = Math.exp(-d2 / hr2);
             const d = Math.sqrt(d2) || 1;
-            const amount = PUSH * falloff * pointer.press;
-            tx += (dx / d) * amount;
-            ty += (dy / d) * amount;
+            tx += (dx / d) * HOVER_PUSH * falloff;
+            ty += (dy / d) * HOVER_PUSH * falloff;
           }
         }
 
-        n.vx = (n.vx + (tx - n.x) * STIFFNESS) * DAMPING;
-        n.vy = (n.vy + (ty - n.y) * STIFFNESS) * DAMPING;
+        n.vx = (n.vx + (tx - n.x) * stiff) * damp;
+        n.vy = (n.vy + (ty - n.y) * stiff) * damp;
         n.x += n.vx;
         n.y += n.vy;
 
-        if (!moving && (Math.abs(n.vx) > 0.02 || Math.abs(n.vy) > 0.02)) moving = true;
+        if (!moving) {
+          const off = Math.abs(n.x - n.ox) + Math.abs(n.y - n.oy);
+          if (Math.abs(n.vx) > 0.015 || Math.abs(n.vy) > 0.015 || off > 0.4) moving = true;
+        }
       }
-      settled = !moving && !pointer.active;
+
+      settled = !moving && !grab.active && !pointer.inside;
     }
 
     function draw() {
@@ -116,14 +157,17 @@ export default function ElasticGrid() {
       ctx!.stroke();
 
       // Highlight pass — only the few segments the pointer is deforming.
-      if (pointer.active) {
-        const r2 = RADIUS * RADIUS;
+      if (grab.active || pointer.inside) {
+        const hx = grab.active ? grab.ox : pointer.x;
+        const hy = grab.active ? grab.oy : pointer.y;
+        const hotR = grab.active ? GRAB_RADIUS : HOVER_RADIUS;
+        const r2 = hotR * hotR;
         ctx!.beginPath();
         for (let r = 0; r < rows; r++) {
           for (let c = 0; c < cols; c++) {
             const n = at(r, c);
-            const dx = n.ox - pointer.x;
-            const dy = n.oy - pointer.y;
+            const dx = n.ox - hx;
+            const dy = n.oy - hy;
             if (dx * dx + dy * dy > r2) continue;
             if (c + 1 < cols) {
               const right = at(r, c + 1);
@@ -137,8 +181,8 @@ export default function ElasticGrid() {
             }
           }
         }
-        ctx!.strokeStyle = "rgba(34,211,238,0.30)";
-        ctx!.lineWidth = 1;
+        ctx!.strokeStyle = grab.active ? "rgba(34,211,238,0.46)" : "rgba(34,211,238,0.26)";
+        ctx!.lineWidth = grab.active ? 1.25 : 1;
         ctx!.stroke();
       }
     }
@@ -161,19 +205,42 @@ export default function ElasticGrid() {
     function onMove(e: PointerEvent) {
       pointer.x = e.clientX;
       pointer.y = e.clientY;
-      pointer.active = true;
+      pointer.inside = true;
+      if (grab.active) {
+        grab.dx = e.clientX - grab.ox;
+        grab.dy = e.clientY - grab.oy;
+      }
       wake();
     }
-    function onLeave() {
-      pointer.active = false;
+
+    function onDown(e: PointerEvent) {
+      // Real controls keep their clicks; the sheet is grabbed from empty space.
+      // e.target is not always an Element (window, text nodes), so probe first.
+      const el = e.target as Element | null;
+      if (el && typeof el.closest === "function" && el.closest(INTERACTIVE)) return;
+      grab.active = true;
+      grab.ox = e.clientX;
+      grab.oy = e.clientY;
+      grab.dx = 0;
+      grab.dy = 0;
+      document.body.style.userSelect = "none";
+      document.body.style.cursor = "grabbing";
       wake();
     }
-    function onDown() {
-      pointer.press = 2.1; // press harder into the sheet
-      wake();
-    }
+
     function onUp() {
-      pointer.press = 1;
+      if (!grab.active) return;
+      grab.active = false;
+      grab.dx = 0;
+      grab.dy = 0;
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+      wake();
+    }
+
+    function onLeave() {
+      pointer.inside = false;
+      onUp();
       wake();
     }
     function onResize() {
@@ -189,14 +256,18 @@ export default function ElasticGrid() {
     window.addEventListener("pointermove", onMove, { passive: true });
     window.addEventListener("pointerdown", onDown, { passive: true });
     window.addEventListener("pointerup", onUp, { passive: true });
+    window.addEventListener("pointercancel", onUp, { passive: true });
     window.addEventListener("pointerleave", onLeave, { passive: true });
     window.addEventListener("resize", onResize);
 
     return () => {
       if (raf) cancelAnimationFrame(raf);
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
       window.removeEventListener("pointerleave", onLeave);
       window.removeEventListener("resize", onResize);
     };
