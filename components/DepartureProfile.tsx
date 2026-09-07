@@ -122,16 +122,28 @@ export default function DepartureProfile() {
                   height={PLOT_H}
                   fill="transparent"
                 />
+                {/*
+                  Bars are laid out at full height and grown with scaleY.
+                  Animating the `height` geometry attribute instead would
+                  relayout the SVG on every frame for all 24 bars, and
+                  framer-motion writes it back with a `px` suffix, which is
+                  not something an SVG geometry attribute should carry.
+                */}
                 <motion.rect
                   x={i * SLOT + 3}
+                  y={BASELINE - h}
                   width={BAR_W}
+                  height={h}
                   rx={2}
                   fill={isPeak ? "var(--data-strong)" : "var(--data)"}
-                  opacity={isDim ? 0.45 : 1}
-                  initial={reduce ? { y: BASELINE - h, height: h } : { y: BASELINE, height: 0 }}
-                  animate={
-                    reduce || inView ? { y: BASELINE - h, height: h } : undefined
-                  }
+                  style={{
+                    transformBox: "fill-box",
+                    transformOrigin: "bottom",
+                    opacity: isDim ? 0.45 : 1,
+                    transition: "opacity 150ms",
+                  }}
+                  initial={reduce ? false : { scaleY: 0 }}
+                  animate={inView || reduce ? { scaleY: 1 } : undefined}
                   transition={{
                     duration: reduce ? 0 : 0.55,
                     ease: motionTokens.easing.smooth,
