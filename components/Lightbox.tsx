@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -23,6 +24,13 @@ type Props = {
 
 export default function Lightbox({ images, index, onClose, onNavigate }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
+  // Portalling to <body> is not cosmetic here. The lightbox is rendered inside
+  // the project card, and that card carries backdrop-blur — an ancestor with a
+  // backdrop-filter becomes the containing block for position:fixed, so the
+  // dialog was being pinned to the card instead of the viewport and any page
+  // taller than the card ran off the bottom.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const reduce = useReducedMotion();
   const open = index !== null;
   const current = open ? images[index] : null;
@@ -78,7 +86,9 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
     if (open) panelRef.current?.querySelector<HTMLElement>("button")?.focus();
   }, [open]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence mode="wait">
       {open && current && (
         <motion.div
@@ -94,13 +104,13 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
         >
           <motion.div
             ref={panelRef}
-            className="relative w-full max-w-[1400px]"
+            className="relative flex max-h-full w-full max-w-[1400px] flex-col"
             initial={{ opacity: 0, scale: reduce ? 1 : 0.96, y: reduce ? 0 : 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: reduce ? 1 : 0.97, y: 0 }}
             transition={{ duration: motionTokens.duration.normal, ease: motionTokens.easing.smooth }}
           >
-            <div className="flex items-center justify-between gap-4 mb-3" onClick={(e) => e.stopPropagation()}>
+            <div className="flex shrink-0 items-center justify-between gap-4 mb-3" onClick={(e) => e.stopPropagation()}>
               <p className="font-mono text-xs sm:text-sm text-ink">
                 {current.title}
                 <span className="text-ink-muted ml-2">
@@ -119,14 +129,33 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
               </button>
             </div>
 
-            <div className="rounded-xl overflow-hidden border border-rule-strong bg-ground" onClick={(e) => e.stopPropagation()}>
+            {/*
+              The page has to fit the viewport, not just its width. This box
+              takes the height left over after the header and the dialog's own
+              padding, and the image is clamped on both axes — a replaced
+              element under max-width and max-height keeps its aspect ratio, so
+              a wide report page letterboxes instead of running off-screen.
+            */}
+            <div
+              className="flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-xl border border-rule-strong bg-ground"
+              onClick={(e) => e.stopPropagation()}
+            >
               <Image
                 src={current.src}
                 alt={current.alt}
                 width={current.width}
                 height={current.height}
                 sizes="(max-width: 1400px) 100vw, 1400px"
-                className="w-full h-auto"
+                /*
+                  Sized against the viewport, not against the parent. As a flex
+                  item the image gets min-height:auto and refuses to shrink below
+                  its intrinsic height, and a percentage max-height does not
+                  resolve against a flex-determined parent — so `max-h-full`
+                  alone left it overflowing. svh keeps it inside the small
+                  viewport, which is the one that survives mobile browser chrome.
+                  The subtracted space covers the dialog padding and the header.
+                */
+                className="h-auto w-auto max-w-full object-contain max-h-[calc(100svh-7rem)] sm:max-h-[calc(100svh-10rem)]"
               />
             </div>
 
@@ -151,6 +180,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }: Props) 
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
