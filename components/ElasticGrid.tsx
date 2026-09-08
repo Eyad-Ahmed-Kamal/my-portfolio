@@ -23,7 +23,13 @@ export default function ElasticGrid() {
     const coarse = !window.matchMedia("(pointer: fine)").matches;
     if (coarse) return;
 
-    const INTERACTIVE = "a, button, input, textarea, select, [role=dialog]";
+    // The sheet is grabbed from empty space only. Anything that carries text or
+    // takes input keeps its own pointer behaviour, so selecting a paragraph is
+    // just a selection — previously every press here set user-select:none on
+    // <body> and made the whole page uncopyable.
+    const INTERACTIVE =
+      "a, button, input, textarea, select, [role=dialog], p, h1, h2, h3, h4, h5, h6," +
+      " li, code, pre, span, strong, em, figcaption, label, svg, img, table, figure";
 
     const SPACING = 54;           // grid pitch in px
 

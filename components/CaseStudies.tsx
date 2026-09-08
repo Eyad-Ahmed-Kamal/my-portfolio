@@ -22,13 +22,13 @@ export default function CaseStudies() {
         Projects
       </h2>
       <p className="text-base text-ink-muted max-w-2xl mb-10 leading-relaxed">
-        End-to-end business intelligence projects emphasizing dimensional data modeling, centralized DAX calculations, and clean analytical delivery.
+        Where I put the data fundamentals to work: dimensional modeling, a centralized measure layer, and a report built to be read.
       </p>
 
       {/* Bento Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         {/* Project 1: UK Train Rides (Featured Full-Width Card) */}
-        <div className="lg:col-span-3 rounded-2xl border border-rule bg-gradient-to-br from-white/[0.045] to-white/[0.015] backdrop-blur-md p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+        <div className="rounded-2xl border border-rule bg-gradient-to-br from-white/[0.045] to-white/[0.015] backdrop-blur-md p-6 sm:p-8 lg:p-10 relative overflow-hidden">
           {/* Ambient Glow */}
           <div className="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-white/[0.03] blur-3xl pointer-events-none" />
 
@@ -275,49 +275,8 @@ export default function CaseStudies() {
           />
         </div>
 
-        {/* Project 2: BMW Sales BI Dashboard (2 Columns) */}
-        <div className="lg:col-span-2 rounded-2xl border border-rule bg-gradient-to-br from-white/[0.045] to-white/[0.015] backdrop-blur-md p-6 sm:p-8">
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.06] text-ink border border-rule">
-              Practice Dataset Project
-            </span>
-            <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.06] text-ink border border-rule">
-              Dimensional Modeling
-            </span>
-            <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-white/[0.05] text-ink-muted border border-rule">
-              YoY Time Intelligence
-            </span>
-          </div>
-
-          <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-ink mb-3">
-            BMW Sales BI Dashboard
-          </h3>
-          <p className="text-sm sm:text-base leading-relaxed text-ink-muted mb-6">
-            A comprehensive sales intelligence dashboard built on a BMW training dataset to practice multi-axis dimensional modeling, time-intelligence DAX calculations (YoY, YTD), and hierarchical drill-through views.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="p-3.5 rounded-xl border border-rule bg-ground/40">
-              <div className="font-mono text-xs text-ink-muted font-semibold">Geography</div>
-              <div className="text-xs text-ink-muted mt-1.5">Regional revenue breakdown &amp; country mix</div>
-            </div>
-            <div className="p-3.5 rounded-xl border border-rule bg-ground/40">
-              <div className="font-mono text-xs text-ink-muted font-semibold">Vehicle Series</div>
-              <div className="text-xs text-ink-muted mt-1.5">Volume, price bands &amp; model drill-through</div>
-            </div>
-            <div className="p-3.5 rounded-xl border border-rule bg-ground/40">
-              <div className="font-mono text-xs text-ink-muted font-semibold">Sales Channel</div>
-              <div className="text-xs text-ink-muted mt-1.5">Dealer network vs. direct performance</div>
-            </div>
-            <div className="p-3.5 rounded-xl border border-rule bg-ground/40">
-              <div className="font-mono text-xs text-ink-muted font-semibold">Time Intelligence</div>
-              <div className="text-xs text-ink-muted mt-1.5">YoY growth, YTD pacing &amp; monthly trends</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Engineering Approach (1 Column) */}
-        <div className="rounded-2xl border border-rule bg-gradient-to-br from-white/[0.04] to-white/[0.015] backdrop-blur-md p-6 sm:p-8 flex flex-col justify-between">
+        {/* Engineering Approach */}
+        <div className="rounded-2xl border border-rule bg-gradient-to-br from-white/[0.04] to-white/[0.015] backdrop-blur-md p-6 sm:p-8 grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-start">
           <div>
             <div className="flex items-center gap-2 font-mono text-xs text-ink-muted uppercase tracking-wider mb-4">
               <Layers className="w-3.5 h-3.5" />

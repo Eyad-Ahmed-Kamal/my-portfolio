@@ -14,14 +14,14 @@ export default function Hero() {
           </div>
 
           <h1 className="font-display text-[42px] sm:text-6xl lg:text-[76px] leading-[1.04] tracking-[-0.02em] text-ink mb-7">
-            I build business intelligence from the data model up.
+            AI is where I&apos;m going. Data is where I started.
           </h1>
 
           <p className="text-base sm:text-lg leading-relaxed text-ink-muted max-w-[58ch] mb-9">
             Second-year AI &amp; Data Science student at Zagazig University,
-            focused on Power BI, Star Schema modeling, DAX, and algorithmic
-            problem solving in C++. Looking for an internship where I can learn,
-            contribute, and build reliable data models.
+            working toward machine learning. Solid on the data side — dimensional
+            modeling, Power BI, DAX — and on algorithms in C++. Looking for an
+            internship where I can learn and contribute.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 mb-9">

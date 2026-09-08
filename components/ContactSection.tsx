@@ -47,11 +47,11 @@ export default function ContactSection() {
             </div>
 
             <h3 className="font-display text-4xl sm:text-5xl leading-[1.06] tracking-[-0.015em] text-ink mb-4">
-              Let&apos;s build data solutions together.
+              Open to AI, ML, and data internships.
             </h3>
 
             <p className="text-base text-ink-muted leading-relaxed max-w-md">
-              Interested in Business Intelligence, Data Analytics, and Data Engineering roles. Always eager to learn, contribute to real-world pipelines, and collaborate.
+              Second-year AI &amp; Data Science student with a working foundation in data modeling and algorithms. Looking for a team where I can learn quickly and pull my weight.
             </p>
           </div>
 

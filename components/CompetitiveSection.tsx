@@ -42,7 +42,7 @@ export default function CompetitiveSection() {
               Zagazig University Competitor
             </h3>
             <p className="text-sm text-ink-muted leading-relaxed">
-              Represented Zagazig University in the Egyptian Collegiate Programming Contest (ECPC 2026 qualifications) alongside two teammates under standard ICPC rules (one shared machine, 3-person team, strict 5-hour limit). Awarded an <strong className="text-ink">Honorable Mention</strong>.
+              Represented Zagazig University in the Egyptian Collegiate Programming Contest, ECPC 2026 qualifications, alongside two teammates.
             </p>
           </div>
         </div>
@@ -55,12 +55,31 @@ export default function CompetitiveSection() {
               <Award className="w-4 h-4 text-ink-muted" />
               <span className="uppercase tracking-wider">ECPC 2026 · Qualifications</span>
             </div>
-            <h4 className="text-lg font-semibold text-ink mb-3">
+            <h4 className="font-display text-2xl text-ink mb-4">
               Honorable Mention
             </h4>
-            <p className="text-sm text-ink-muted leading-relaxed">
-              What I take from contest practice: reasoning about time and space complexity (<span className="font-mono text-xs text-ink px-1 py-0.5 rounded bg-white/[0.06]">O(N log N)</span> vs <span className="font-mono text-xs text-ink px-1 py-0.5 rounded bg-white/[0.06]">O(N²)</span>), checking boundary cases, and getting logic right under a time limit.
-            </p>
+
+            {/* The contest as a spec sheet — the facts, nothing around them. */}
+            <dl className="divide-y divide-rule border-t border-rule">
+              {[
+                ["Team", "4090"],
+                ["University", "Zagazig"],
+                ["Members", "3"],
+                ["Machines", "1, shared"],
+                ["Time limit", "5 hours"],
+                ["Rules", "Standard ICPC"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="flex items-baseline justify-between gap-4 py-2"
+                >
+                  <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">
+                    {label}
+                  </dt>
+                  <dd className="tnum font-mono text-sm text-ink">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>

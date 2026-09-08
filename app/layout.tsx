@@ -31,12 +31,14 @@ export const metadata: Metadata = {
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
-  title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
+  title: "Eyad Ahmed | AI & Data Science Student · Zagazig University",
   description:
-    "Portfolio of Eyad Ahmed — AI & Data Science undergraduate at Zagazig University building business intelligence solutions, star schema data models, DAX, and algorithmic problem solving.",
+    "Eyad Ahmed — second-year AI & Data Science student at Zagazig University, working toward machine learning, with a foundation in dimensional data modeling, Power BI, DAX, and algorithmic problem solving in C++.",
   keywords: [
     "Eyad Ahmed",
     "Eyad Ahmed Kamal Mostafa",
+    "AI Student",
+    "Machine Learning",
     "Business Intelligence",
     "Power BI",
     "DAX",
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Eyad Ahmed Kamal Mostafa" }],
   openGraph: {
-    title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
+    title: "Eyad Ahmed | AI & Data Science Student · Zagazig University",
     description:
-      "AI & Data Science undergraduate building business intelligence solutions from the data model up. Power BI, DAX, Star Schema, and Algorithmic Rigor.",
+      "Second-year AI & Data Science student at Zagazig University, working toward machine learning, with a foundation in data modeling and algorithms.",
     url: SITE_URL,
     siteName: SITE_NAME,
     images: [
@@ -67,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eyad Ahmed | AI & Data Science Student · BI & Data Analytics",
+    title: "Eyad Ahmed | AI & Data Science Student · Zagazig University",
     description:
-      "AI & Data Science undergraduate building business intelligence solutions from the data model up.",
+      "Second-year AI & Data Science student working toward machine learning, with a foundation in data modeling and algorithms.",
     images: ["/uploads/dash-executive-summary.jpg"],
   },
 };
@@ -89,7 +91,7 @@ const personJsonLd = {
   email: "mailto:eyadahmedkamalego76@gmail.com",
   jobTitle: "AI & Data Science Student",
   description:
-    "AI & Data Science undergraduate at Zagazig University building business intelligence solutions from the data model up.",
+    "Second-year AI & Data Science student at Zagazig University, working toward machine learning, with a foundation in data modeling and algorithms.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Zagazig",
@@ -101,6 +103,7 @@ const personJsonLd = {
     description: "Faculty of Computers and Information — AI & Data Science",
   },
   knowsAbout: [
+    "Data Modeling",
     "Business Intelligence",
     "Power BI",
     "DAX",

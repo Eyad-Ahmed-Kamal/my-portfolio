@@ -3,9 +3,9 @@ import { BarChart3, Code2 } from "lucide-react";
 export default function SkillsSection() {
   const skillCategories = [
     {
-      title: "Business Intelligence & Analytics",
+      title: "Data & Analytics",
       icon: BarChart3,
-      badge: "Primary Focus",
+      badge: "Where I'm solid",
       colorClass: "text-ink-muted border-rule bg-white/[0.06]",
       skills: [
         { name: "Power BI", detail: "Multi-page reporting, interactive dashboards & visual hierarchy" },
@@ -20,7 +20,7 @@ export default function SkillsSection() {
       colorClass: "text-ink-muted border-rule bg-white/[0.06]",
       skills: [
         { name: "C++", detail: "Modern C++, STL, algorithms & competitive problem solving" },
-        { name: "Python", detail: "Pandas, NumPy, data analysis workflows & automation scripts" },
+        { name: "Python", detail: "Core language, scripting, and problem solving" },
       ],
     },
   ];
