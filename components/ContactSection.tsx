@@ -134,7 +134,7 @@ export default function ContactSection() {
           <span>AI &amp; Data Science Student</span>
         </div>
         <div>
-          <span>Zagazig, Egypt · 2026</span>
+          <span>Cairo, Egypt · 2026</span>
         </div>
       </div>
     </footer>

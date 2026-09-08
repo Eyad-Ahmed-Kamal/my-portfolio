@@ -94,7 +94,7 @@ const personJsonLd = {
     "Second-year AI & Data Science student at Zagazig University, working toward machine learning, with a foundation in data modeling and algorithms.",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Zagazig",
+    addressLocality: "Cairo",
     addressCountry: "EG",
   },
   alumniOf: {

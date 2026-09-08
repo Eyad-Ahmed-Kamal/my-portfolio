@@ -91,7 +91,7 @@ export default function Hero() {
           <figcaption className="mt-3 font-mono text-[11px] text-ink-muted">
             Eyad Ahmed Kamal Mostafa
             <span className="mx-1.5 opacity-40">·</span>
-            Zagazig, EG
+            Cairo, EG
           </figcaption>
         </figure>
       </div>
