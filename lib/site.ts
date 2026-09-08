@@ -7,6 +7,6 @@
  *
  * When a custom domain is wired up, change this one line.
  */
-export const SITE_URL = "https://my-portfolio-omega-three-4xust7w903.vercel.app";
+export const SITE_URL = "https://eyad-ahmed-kamal.vercel.app";
 
 export const SITE_NAME = "Eyad Ahmed Portfolio";
